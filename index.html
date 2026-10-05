@@ -4,797 +4,945 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Badr Eddine Slaoui | Full-Stack Developer & AI/ML Engineer</title>
-  <meta name="description" content="Portfolio of Badr Eddine Slaoui — Full-Stack Web Developer and AI/ML Engineer based in Safi, Morocco. Specializing in Laravel, React, Vue, Python, Scikit-learn, and MLOps." />
+  <meta name="description" content="High-tech engineering portfolio of Badr Eddine Slaoui — Full-Stack Developer, AI/ML Engineer, and Linux & DevOps Enthusiast based in Safi, Morocco." />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome 6.5.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Devicons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-  <!-- Portfolio stylesheet -->
+  <!-- Custom Design System Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Floating Orbs -->
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<div class="orb orb-3"></div>
-
-<!-- ════════════════════════════════════════════════
-     NAVBAR
-════════════════════════════════════════════════ -->
-<nav id="navbar">
-  <span class="nav-brand">Badr Eddine Slaoui</span>
-
-  <!-- Desktop links -->
-  <div class="nav-links">
-    <span class="nav-link" data-section="hero" data-t="nav.home">Home</span>
-    <span class="nav-link" data-section="about" data-t="nav.about">About</span>
-    <span class="nav-link" data-section="skills" data-t="nav.skills">Skills</span>
-    <span class="nav-link" data-section="experience" data-t="nav.experience">Experience</span>
-    <span class="nav-link" data-section="projects" data-t="nav.projects">Projects</span>
-    <span class="nav-link" data-section="education" data-t="nav.education">Education</span>
-    <span class="nav-link" data-section="certifications" data-t="nav.certifications">Certifications</span>
-    <span class="nav-link" data-section="contact" data-t="nav.contact">Contact</span>
-  </div>
-
-  <!-- Actions -->
-  <div class="nav-actions">
-    <!-- Language switcher -->
-    <button class="lang-btn active" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="fr">FR</button>
-    <button class="lang-btn" data-lang="ar">AR</button>
-
-    <!-- CV Dropdown -->
-    <div class="cv-dropdown">
-      <button class="cv-trigger" id="cv-trigger">
-        <i class="fa-solid fa-file-arrow-down"></i>
-        <span data-t="nav.downloadCV">Download CV</span>
-        <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;"></i>
-      </button>
-      <div class="cv-menu" id="cv-menu">
-        <a class="cv-item" href="PDFs/CV FullStack English.pdf" download>
-          <i class="fa-solid fa-globe"></i>
-          <span data-t="cv.fsEn">Full-Stack CV (EN)</span>
-        </a>
-        <a class="cv-item" href="PDFs/CV FullStack French.pdf" download>
-          <i class="fa-solid fa-flag"></i>
-          <span data-t="cv.fsFr">Full-Stack CV (FR)</span>
-        </a>
-        <a class="cv-item" href="PDFs/CV AI English.pdf" download>
-          <i class="fa-solid fa-robot"></i>
-          <span data-t="cv.aiEn">AI / ML CV (EN)</span>
-        </a>
-        <a class="cv-item" href="PDFs/CV AI French.pdf" download>
-          <i class="fa-solid fa-brain"></i>
-          <span data-t="cv.aiFr">AI / ML CV (FR)</span>
-        </a>
+  <!-- ════════════════════════════════════════════════
+       SYSTEM TOP HUD (Cockpit Status Bar)
+  ════════════════════════════════════════════════ -->
+  <header id="top-hud">
+    <div class="hud-left">
+      <div class="hud-item hud-status-item">
+        <span class="hud-status-dot"></span>
+        <span data-t="hud.status">SYS: ONLINE</span>
+      </div>
+      <div class="hud-item">
+        <i class="fa-solid fa-microchip"></i>
+        <span>ARCH: x86_64</span>
+      </div>
+      <div class="hud-item">
+        <i class="fa-solid fa-code-branch"></i>
+        <span>KERNEL: v6.8-LTS</span>
       </div>
     </div>
+    <div class="hud-right">
+      <div class="hud-item">
+        <i class="fa-solid fa-location-crosshairs"></i>
+        <span data-t="hud.location">SAFI, MOROCCO [UTC+1]</span>
+      </div>
+      <div class="hud-item hud-pill">
+        <i class="fa-solid fa-circle-check"></i>
+        <span data-t="hud.availability">AVAILABLE FOR WORK</span>
+      </div>
+    </div>
+  </header>
 
-    <!-- Hamburger -->
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <span class="mobile-nav-link" data-section="hero" data-t="nav.home">Home</span>
-  <span class="mobile-nav-link" data-section="about" data-t="nav.about">About</span>
-  <span class="mobile-nav-link" data-section="skills" data-t="nav.skills">Skills</span>
-  <span class="mobile-nav-link" data-section="experience" data-t="nav.experience">Experience</span>
-  <span class="mobile-nav-link" data-section="projects" data-t="nav.projects">Projects</span>
-  <span class="mobile-nav-link" data-section="education" data-t="nav.education">Education</span>
-  <span class="mobile-nav-link" data-section="certifications" data-t="nav.certifications">Certifications</span>
-  <span class="mobile-nav-link" data-section="contact" data-t="nav.contact">Contact</span>
-  <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
-    <a class="cv-item" href="PDFs/CV FullStack English.pdf" download style="flex:1;justify-content:center;">
-      <i class="fa-solid fa-download"></i> <span data-t="cv.fsEn">Full-Stack CV (EN)</span>
+  <!-- ════════════════════════════════════════════════
+       PRIMARY NAVIGATION BAR
+  ════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a class="nav-brand" href="#hero">
+      <span class="nav-prompt-prefix">&gt;_</span>
+      <span class="nav-brand-text">Badr Eddine Slaoui</span>
     </a>
+
+    <!-- Desktop Navigation Links -->
+    <div class="nav-links">
+      <span class="nav-link" data-section="about"><span class="nav-num">// 01.</span><span data-t="nav.about">About</span></span>
+      <span class="nav-link" data-section="skills"><span class="nav-num">// 02.</span><span data-t="nav.skills">Skills</span></span>
+      <span class="nav-link" data-section="experience"><span class="nav-num">// 03.</span><span data-t="nav.experience">Experience</span></span>
+      <span class="nav-link" data-section="projects"><span class="nav-num">// 04.</span><span data-t="nav.projects">Projects</span></span>
+      <span class="nav-link" data-section="education"><span class="nav-num">// 05.</span><span data-t="nav.education">Education</span></span>
+      <span class="nav-link" data-section="certifications"><span class="nav-num">// 06.</span><span data-t="nav.certifications">Certs</span></span>
+      <span class="nav-link" data-section="contact"><span class="nav-num">// 07.</span><span data-t="nav.contact">Contact</span></span>
+    </div>
+
+    <!-- Navigation Actions -->
+    <div class="nav-actions">
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+      </div>
+
+      <!-- Quick CV Hub Button -->
+      <button class="cv-trigger-btn" id="nav-cv-btn" title="Download CVs">
+        <i class="fa-solid fa-file-arrow-down"></i>
+        <span data-t="nav.downloadCV">CV Hub</span>
+      </button>
+
+      <!-- Terminal Focus Button -->
+      <button class="terminal-toggle-btn" id="terminal-focus-btn" title="Open Interactive Terminal">
+        <i class="fa-solid fa-terminal"></i>
+      </button>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <div class="mobile-link" data-section="hero"><i class="fa-solid fa-terminal"></i> <span data-t="nav.home">Home</span></div>
+    <div class="mobile-link" data-section="about"><i class="fa-solid fa-user-gear"></i> <span data-t="nav.about">About</span></div>
+    <div class="mobile-link" data-section="skills"><i class="fa-solid fa-layer-group"></i> <span data-t="nav.skills">Skills</span></div>
+    <div class="mobile-link" data-section="experience"><i class="fa-solid fa-timeline"></i> <span data-t="nav.experience">Experience</span></div>
+    <div class="mobile-link" data-section="projects"><i class="fa-solid fa-code-fork"></i> <span data-t="nav.projects">Projects</span></div>
+    <div class="mobile-link" data-section="education"><i class="fa-solid fa-graduation-cap"></i> <span data-t="nav.education">Education</span></div>
+    <div class="mobile-link" data-section="certifications"><i class="fa-solid fa-certificate"></i> <span data-t="nav.certifications">Certifications</span></div>
+    <div class="mobile-link" data-section="contact"><i class="fa-solid fa-paper-plane"></i> <span data-t="nav.contact">Contact</span></div>
   </div>
-</div>
 
-<!-- ════════════════════════════════════════════════
-     MAIN CONTENT
-════════════════════════════════════════════════ -->
-<main>
+  <!-- ════════════════════════════════════════════════
+       MAIN CONTENT CONTAINER
+  ════════════════════════════════════════════════ -->
+  <main>
 
-  <!-- ── HERO ──────────────────────────────────────────────── -->
-  <section class="section" id="hero">
-    <div class="hero-inner">
-      <!-- Left: text -->
-      <div class="hero-content">
-        <div class="hero-badge" data-t="hero.badge">Available for Opportunities</div>
+    <!-- ── HERO SECTION ── -->
+    <section class="section" id="hero">
+      <div class="hero-grid">
+        <!-- Hero Left Info -->
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <div class="hero-status-badge">
+              <span class="hero-status-pulse"></span>
+              <span data-t="hero.badge">Available for Opportunities</span>
+            </div>
+          </div>
 
-        <h1 class="hero-name">Badr Eddine<br>Slaoui</h1>
+          <h1 class="hero-name">Badr Eddine<br />Slaoui</h1>
 
-        <p class="hero-role" data-t="hero.role">Full-Stack Developer &amp; AI/ML Engineer</p>
+          <div class="hero-role-terminal">
+            <span>$&gt;</span>
+            <span id="role-typewriter">Full-Stack Developer &amp; AI/ML Engineer</span>
+            <span class="typing-cursor"></span>
+          </div>
 
-        <blockquote class="hero-quote" data-t="hero.quote">
-          Designing scalable systems and turning ideas into production-ready digital products — while turning data into reliable predictions and building intelligent systems from experimentation to deployment.
-        </blockquote>
+          <blockquote class="hero-bio" data-t="hero.quote">
+            Designing resilient, scalable web architectures and engineering production-ready predictive AI systems — bridging modern software engineering with end-to-end data intelligence.
+          </blockquote>
 
-        <p class="hero-location">
-          <i class="fa-solid fa-location-dot" style="color:#7c3aed;"></i>
-          <span data-t="hero.location">Safi, Morocco</span>
-        </p>
+          <div class="hero-ctas">
+            <button class="btn-cyber-primary" id="cta-projects">
+              <i class="fa-solid fa-rocket"></i>
+              <span data-t="hero.ctaProjects">Explore Projects</span>
+            </button>
+            <button class="btn-cyber-outline" id="cta-cv-hub">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span data-t="hero.ctaCV">Download CVs</span>
+            </button>
+            <button class="btn-cyber-secondary" id="cta-contact">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span data-t="hero.ctaContact">Get In Touch</span>
+            </button>
+          </div>
 
-        <div class="hero-ctas">
-          <button class="btn-primary" id="cta-projects">
-            <i class="fa-solid fa-rocket"></i>
-            <span data-t="hero.ctaProjects">View Projects</span>
-          </button>
-          <button class="btn-secondary" id="cta-contact">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span data-t="hero.ctaContact">Contact Me</span>
-          </button>
+          <div class="hero-meta-row">
+            <div class="hero-social-links">
+              <a href="mailto:slaoui.badr.eddine.sdv@gmail.com" class="cyber-social-btn" title="Send Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="tel:+212680981007" class="cyber-social-btn" title="Direct Phone">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+              <a href="https://github.com/Badr-Eddine-Slaoui" target="_blank" rel="noopener noreferrer" class="cyber-social-btn" title="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/badr-eddine-slaoui" target="_blank" rel="noopener noreferrer" class="cyber-social-btn" title="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric-item">
+                <span class="metric-number">2+</span>
+                <span class="metric-label" data-t="stats.exp">Years Exp.</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">20+</span>
+                <span class="metric-label" data-t="stats.projects">Projects</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-number">30+</span>
+                <span class="metric-label" data-t="stats.tech">Tech Stack</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-socials">
-          <a href="mailto:slaoui.badr.eddine.sdv@gmail.com" class="social-icon-btn" title="Email">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-          <a href="tel:+212680981007" class="social-icon-btn" title="Phone">
-            <i class="fa-solid fa-phone"></i>
-          </a>
-          <a href="https://github.com/Badr-Eddine-Slaoui" target="_blank" rel="noopener" class="social-icon-btn" title="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://linkedin.com/in/badr-eddine-slaoui" target="_blank" rel="noopener" class="social-icon-btn" title="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-        </div>
+        <!-- Hero Right: Avatar + Interactive Linux Console -->
+        <div class="hero-visual">
+          <!-- Avatar Cockpit Card -->
+          <div class="avatar-cockpit reveal-up">
+            <div class="avatar-frame">
+              <img src="profile.png" alt="Badr Eddine Slaoui" onerror="this.src='https://avatars.githubusercontent.com/u/144708761?v=4'" />
+            </div>
+            <div>
+              <div class="avatar-info-header">SYS://USER_IDENTITY</div>
+              <div class="avatar-name">Badr Eddine Slaoui</div>
+              <div class="avatar-tags">
+                <span class="avatar-tag"><i class="fa-solid fa-code"></i> Full-Stack</span>
+                <span class="avatar-tag"><i class="fa-solid fa-brain"></i> AI &amp; MLOps</span>
+                <span class="avatar-tag"><i class="fa-solid fa-server"></i> DevOps</span>
+              </div>
+            </div>
+          </div>
 
-        <!-- Stats -->
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="hero-stat-num">2+</span>
-            <span class="hero-stat-label" data-t="stats.exp">Years Exp.</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">20+</span>
-            <span class="hero-stat-label" data-t="stats.projects">Projects</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-num">30+</span>
-            <span class="hero-stat-label" data-t="stats.tech">Technologies</span>
+          <!-- Interactive Linux Terminal Emulator -->
+          <div class="terminal-window reveal-up reveal-delay-1" id="interactive-terminal">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+              </div>
+              <div class="terminal-title">badr@workstation:~ (bash)</div>
+              <div class="terminal-actions-bar">STATUS: READY</div>
+            </div>
+
+            <div class="terminal-body" id="terminal-output-container">
+              <div class="terminal-line"><span class="terminal-cyan">Antigravity Cyber Terminal [Version 2.4.0]</span></div>
+              <div class="terminal-line"><span class="terminal-dim">Type or click commands below: 'help', 'skills', 'projects', 'cv', 'neofetch', 'clear'</span></div>
+              <div class="terminal-line">
+                <span class="terminal-prompt">badr@sys:~$</span>
+                <span>cat welcome.txt</span>
+              </div>
+              <div class="terminal-output">
+                Welcome to my engineering portfolio. I specialize in building mission-critical web applications and end-to-end Machine Learning pipelines.
+              </div>
+            </div>
+
+            <!-- Terminal Interactive Input -->
+            <div class="terminal-input-row" style="padding: 0 1.2rem 0.6rem;">
+              <span class="terminal-prompt">badr@sys:~$</span>
+              <input type="text" id="terminal-cli-input" class="terminal-input" placeholder="Type a command (e.g. help, skills, cv)..." autocomplete="off" spellcheck="false" />
+            </div>
+
+            <!-- Preset Command Chips -->
+            <div class="terminal-chips">
+              <span class="terminal-chip" data-cmd="help">help</span>
+              <span class="terminal-chip" data-cmd="skills">skills</span>
+              <span class="terminal-chip" data-cmd="projects">projects</span>
+              <span class="terminal-chip" data-cmd="cv">cv</span>
+              <span class="terminal-chip" data-cmd="neofetch">neofetch</span>
+              <span class="terminal-chip" data-cmd="clear">clear</span>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Right: avatar -->
-      <div class="hero-avatar">
-        <div class="avatar-ring">
-          <img src="profile.png" alt="Badr Eddine Slaoui" class="avatar-img"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-          <div class="avatar-placeholder" style="display:none;">B</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ABOUT ─────────────────────────────────────────────── -->
-  <section class="section" id="about">
-    <div class="reveal-up">
-      <div class="section-label"><i class="fa-solid fa-user"></i> <span data-t="about.label">About Me</span></div>
-      <h2 class="section-title"><span class="underline-accent" data-t="about.title">Who I Am</span></h2>
-      <p class="section-subtitle" data-t="about.subtitle">A passionate developer bridging the worlds of Full-Stack Engineering and Artificial Intelligence.</p>
-    </div>
-
-    <div class="about-grid" style="margin-top:2.5rem;">
-      <!-- Info cards -->
-      <div>
-        <div class="info-card reveal-up reveal-delay-1" style="margin-bottom:0.9rem;">
-          <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div>
-            <div class="info-label">Location</div>
-            <div class="info-value">Safi, Morocco</div>
-          </div>
-        </div>
-        <div class="info-card reveal-up reveal-delay-2" style="margin-bottom:0.9rem;">
-          <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div>
-            <div class="info-label">Email</div>
-            <div class="info-value">slaoui.badr.eddine.sdv@gmail.com</div>
-          </div>
-        </div>
-        <div class="info-card reveal-up reveal-delay-3" style="margin-bottom:0.9rem;">
-          <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <div class="info-label">Phone</div>
-            <div class="info-value">(+212) 680-981007</div>
-          </div>
-        </div>
-        <div class="info-card reveal-up reveal-delay-4">
-          <div class="info-icon"><i class="fa-solid fa-briefcase"></i></div>
-          <div>
-            <div class="info-label">Status</div>
-            <div class="info-value" style="color:#4ade80;">Available for Opportunities</div>
-          </div>
-        </div>
-
-        <p class="reveal-up" style="color:var(--text-mid);font-size:0.88rem;line-height:1.8;margin-top:1.5rem;" data-t="about.para1">
-          I'm Badr Eddine Slaoui, a Junior Full-Stack Web Developer and AI/ML Engineer based in Safi, Morocco. I specialize in building production-ready web applications with Laravel, React, Vue, and Node.js — while also developing end-to-end machine learning systems with Python, Scikit-learn, FastAPI, and MLOps tools.
-        </p>
-        <p class="reveal-up reveal-delay-1" style="color:var(--text-mid);font-size:0.88rem;line-height:1.8;margin-top:0.75rem;" data-t="about.para2">
-          I thrive at the intersection of clean architecture and intelligent automation, turning complex requirements into scalable, maintainable digital products.
-        </p>
+    <!-- ── ABOUT SECTION ── -->
+    <section class="section" id="about">
+      <div class="section-header reveal-up">
+        <div class="section-tag"><i class="fa-solid fa-microchip"></i> <span data-t="about.label">System Specifications</span></div>
+        <h2 class="section-title"><span data-t="about.title">Who I Am</span> &amp; <span class="section-title-highlight">What I Build</span></h2>
+        <p class="section-subtitle" data-t="about.subtitle">A passionate developer bridging the worlds of Full-Stack Web Engineering and Artificial Intelligence.</p>
       </div>
 
-      <!-- Language proficiency -->
-      <div class="reveal-up reveal-delay-2">
-        <div class="glass" style="padding:1.8rem;">
-          <h3 style="font-size:0.9rem;font-weight:600;margin-bottom:1.5rem;color:var(--text-hi);" data-t="about.langTitle">Languages</h3>
-          <div class="lang-bars">
-            <div class="lang-bar-item">
-              <div class="lang-bar-head">
+      <div class="about-deck">
+        <!-- Biography & Spec Metrics -->
+        <div class="about-card reveal-up reveal-delay-1">
+          <p class="about-bio-p" data-t="about.para1">
+            I'm Badr Eddine Slaoui, a Full-Stack Web Developer and AI/ML Engineer based in Safi, Morocco. I specialize in building production-ready web applications with Laravel, React, Vue, and Node.js — while also developing end-to-end machine learning systems with Python, Scikit-learn, FastAPI, and MLOps tools.
+          </p>
+          <p class="about-bio-p" data-t="about.para2">
+            I thrive at the intersection of clean architecture and intelligent automation, turning complex operational requirements into scalable, secure, and maintainable digital products.
+          </p>
+
+          <div class="about-spec-grid">
+            <div class="about-spec-box">
+              <div class="about-spec-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="about-spec-label">Location</div>
+                <div class="about-spec-val" data-t="hero.location">Safi, Morocco</div>
+              </div>
+            </div>
+            <div class="about-spec-box">
+              <div class="about-spec-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div class="about-spec-label">Email</div>
+                <div class="about-spec-val" style="font-size:0.75rem;">slaoui.badr.eddine.sdv@gmail.com</div>
+              </div>
+            </div>
+            <div class="about-spec-box">
+              <div class="about-spec-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <div class="about-spec-label">Phone</div>
+                <div class="about-spec-val">(+212) 680-981007</div>
+              </div>
+            </div>
+            <div class="about-spec-box">
+              <div class="about-spec-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div>
+                <div class="about-spec-label">Availability</div>
+                <div class="about-spec-val" style="color:var(--accent-emerald);">Open for Roles</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Pillars & Language Mastery -->
+        <div class="reveal-up reveal-delay-2" style="display:flex; flex-direction:column; gap:1.5rem;">
+          <!-- 4 Core Pillars -->
+          <div class="pillars-grid">
+            <div class="pillar-box pillar-fullstack">
+              <div class="pillar-icon"><i class="fa-solid fa-layer-group"></i></div>
+              <div class="pillar-title">Full-Stack Architecture</div>
+              <div class="pillar-desc">Modern single-page applications, microservices, and APIs with Laravel Octane, React, Vue 3, and Node.js.</div>
+            </div>
+
+            <div class="pillar-box pillar-ai">
+              <div class="pillar-icon"><i class="fa-solid fa-brain"></i></div>
+              <div class="pillar-title">Machine Learning &amp; AI</div>
+              <div class="pillar-desc">Predictive modeling, hyperparameter optimization, ETL pipelines, and API serving with FastAPI and MLflow.</div>
+            </div>
+
+            <div class="pillar-box pillar-devops">
+              <div class="pillar-icon"><i class="fa-solid fa-server"></i></div>
+              <div class="pillar-title">DevOps &amp; Cloud Systems</div>
+              <div class="pillar-desc">Containerization with Docker, Redis caching, CI/CD automation, Linux server administration, and AWS.</div>
+            </div>
+
+            <div class="pillar-box pillar-arch">
+              <div class="pillar-icon"><i class="fa-solid fa-diagram-project"></i></div>
+              <div class="pillar-title">Agile &amp; Scrum Delivery</div>
+              <div class="pillar-desc">Trained Scrum Master adept at team sprints, code reviews, architectural documentation, and UML modeling.</div>
+            </div>
+          </div>
+
+          <!-- Language Proficiency Gauges -->
+          <div class="lang-proficiency-card">
+            <div class="lang-proficiency-title"><i class="fa-solid fa-language"></i> <span data-t="about.langTitle">Languages Proficiency</span></div>
+            <div class="lang-meter-item">
+              <div class="lang-meter-head">
                 <span>Arabic</span>
-                <span style="color:var(--text-lo);">Native</span>
+                <span class="lang-meter-level">Native</span>
               </div>
-              <div class="lang-bar-track">
-                <div class="lang-bar-fill" style="--w:100%;"></div>
+              <div class="lang-meter-track">
+                <div class="lang-meter-fill" style="--meter-val: 100%;"></div>
               </div>
             </div>
-            <div class="lang-bar-item">
-              <div class="lang-bar-head">
+            <div class="lang-meter-item">
+              <div class="lang-meter-head">
                 <span>English</span>
-                <span style="color:var(--text-lo);">Fluent (C1)</span>
+                <span class="lang-meter-level">Fluent (C1 Certified)</span>
               </div>
-              <div class="lang-bar-track">
-                <div class="lang-bar-fill" style="--w:88%;"></div>
+              <div class="lang-meter-track">
+                <div class="lang-meter-fill" style="--meter-val: 88%;"></div>
               </div>
             </div>
-            <div class="lang-bar-item">
-              <div class="lang-bar-head">
+            <div class="lang-meter-item">
+              <div class="lang-meter-head">
                 <span>French</span>
-                <span style="color:var(--text-lo);">Elementary (A2)</span>
+                <span class="lang-meter-level">Intermediate (A2)</span>
               </div>
-              <div class="lang-bar-track">
-                <div class="lang-bar-fill" style="--w:35%;"></div>
+              <div class="lang-meter-track">
+                <div class="lang-meter-fill" style="--meter-val: 45%;"></div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Key highlights -->
-          <div style="margin-top:2rem;display:flex;flex-direction:column;gap:0.7rem;">
-            <div style="display:flex;align-items:center;gap:0.75rem;padding:0.7rem;border-radius:0.5rem;background:rgba(124,58,237,0.08);border:1px solid rgba(139,92,246,0.2);">
-              <i class="fa-solid fa-layer-group" style="color:#a78bfa;width:1rem;"></i>
-              <span style="font-size:0.82rem;color:var(--text-mid);">Full-Stack Engineering (Laravel, React, Vue, Node)</span>
+    <!-- ── SKILLS COCKPIT SECTION ── -->
+    <section class="section" id="skills">
+      <div class="section-header reveal-up">
+        <div class="section-tag"><i class="fa-solid fa-code"></i> <span data-t="skills.label">Skills Matrix</span></div>
+        <h2 class="section-title"><span data-t="skills.title">Technical Expertise</span></h2>
+        <p class="section-subtitle" data-t="skills.subtitle">A structured overview of core technologies spanning Full-Stack Engineering, Machine Learning, and DevOps.</p>
+      </div>
+
+      <!-- Skills Search and Filter Bar -->
+      <div class="skills-filter-toolbar reveal-up">
+        <div class="skills-search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="skills-filter-input" class="skills-search-input" placeholder="Search technology (e.g. Python, Docker, React, Laravel)..." />
+        </div>
+        <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);">
+          <span>STACK COVERAGE: </span><span style="color:var(--accent-emerald);">40+ TOOLS &amp; RUNTIMES</span>
+        </div>
+      </div>
+
+      <!-- 4 High-Tech Category Modules -->
+      <div class="skills-module-grid">
+        <!-- Module 1: Languages & Runtime -->
+        <div class="skill-category-card reveal-up reveal-delay-1">
+          <div class="skill-category-head">
+            <i class="fa-solid fa-terminal"></i>
+            <span>Languages &amp; Runtimes</span>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="skill-chip">PHP</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">JavaScript (ES6+)</span>
+            <span class="skill-chip">TypeScript</span>
+            <span class="skill-chip">GoLang</span>
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">C / C++</span>
+            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">Bash / Shell</span>
+            <span class="skill-chip">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <!-- Module 2: Web Frameworks & Libraries -->
+        <div class="skill-category-card reveal-up reveal-delay-2">
+          <div class="skill-category-head">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Frameworks &amp; Web Architectures</span>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="skill-chip">Laravel</span>
+            <span class="skill-chip">Laravel Octane</span>
+            <span class="skill-chip">FrankenPHP</span>
+            <span class="skill-chip">React.js</span>
+            <span class="skill-chip">Next.js</span>
+            <span class="skill-chip">Vue.js 3</span>
+            <span class="skill-chip">Nuxt 4</span>
+            <span class="skill-chip">Node.js</span>
+            <span class="skill-chip">Express</span>
+            <span class="skill-chip">Redux / Pinia</span>
+            <span class="skill-chip">TailwindCSS</span>
+            <span class="skill-chip">Bootstrap</span>
+            <span class="skill-chip">Prisma ORM</span>
+            <span class="skill-chip">Socket.IO</span>
+            <span class="skill-chip">BullMQ</span>
+            <span class="skill-chip">Zod Validation</span>
+            <span class="skill-chip">JWT Auth</span>
+          </div>
+        </div>
+
+        <!-- Module 3: Machine Learning & Data Science -->
+        <div class="skill-category-card reveal-up reveal-delay-3">
+          <div class="skill-category-head">
+            <i class="fa-solid fa-robot"></i>
+            <span>AI, Machine Learning &amp; MLOps</span>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="skill-chip">Scikit-learn</span>
+            <span class="skill-chip">NumPy</span>
+            <span class="skill-chip">Pandas</span>
+            <span class="skill-chip">XGBoost</span>
+            <span class="skill-chip">Random Forest</span>
+            <span class="skill-chip">HistGradientBoosting</span>
+            <span class="skill-chip">K-Means &amp; DBSCAN</span>
+            <span class="skill-chip">KNN &amp; SVR</span>
+            <span class="skill-chip">FastAPI</span>
+            <span class="skill-chip">MLflow Tracking</span>
+            <span class="skill-chip">Apache Airflow (DAGs)</span>
+            <span class="skill-chip">Streamlit</span>
+            <span class="skill-chip">Plotly &amp; Seaborn</span>
+            <span class="skill-chip">GridSearchCV</span>
+            <span class="skill-chip">Joblib</span>
+          </div>
+        </div>
+
+        <!-- Module 4: DevOps, Cloud & Systems -->
+        <div class="skill-category-card reveal-up reveal-delay-4">
+          <div class="skill-category-head">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>Cloud, DevOps &amp; Databases</span>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">MySQL</span>
+            <span class="skill-chip">MongoDB</span>
+            <span class="skill-chip">Redis</span>
+            <span class="skill-chip">Docker &amp; Compose</span>
+            <span class="skill-chip">Linux Administration</span>
+            <span class="skill-chip">AWS (EC2, RDS, ElastiCache)</span>
+            <span class="skill-chip">DigitalOcean</span>
+            <span class="skill-chip">Nginx &amp; Caddy</span>
+            <span class="skill-chip">Git &amp; GitHub</span>
+            <span class="skill-chip">GitHub Actions CI/CD</span>
+            <span class="skill-chip">Husky &amp; Vitest</span>
+            <span class="skill-chip">Firebase</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Devicon Matrix -->
+      <div class="tech-icon-matrix-card reveal-up">
+        <div class="tech-matrix-head">
+          <i class="fa-solid fa-microchip"></i>
+          <span data-t="skills.techTitle">Primary Tooling &amp; Ecosystem Matrix</span>
+        </div>
+        <div class="tech-icon-matrix">
+          <div class="matrix-tech-cell"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-go-plain colored"></i><span>GoLang</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-laravel-plain colored"></i><span>Laravel</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-react-original colored"></i><span>React</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-vuejs-plain colored"></i><span>Vue</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-nuxtjs-plain colored"></i><span>Nuxt</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-nextjs-plain"></i><span>Next.js</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-express-original"></i><span>Express</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-nginx-original colored"></i><span>Nginx</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-scikitlearn-plain colored"></i><span>Sklearn</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-pandas-plain colored"></i><span>Pandas</span></div>
+          <div class="matrix-tech-cell"><i class="devicon-apacheairflow-plain colored"></i><span>Airflow</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE SECTION ── -->
+    <section class="section" id="experience">
+      <div class="section-header reveal-up">
+        <div class="section-tag"><i class="fa-solid fa-code-commit"></i> <span data-t="experience.label">Commit History</span></div>
+        <h2 class="section-title"><span data-t="experience.title">Professional Journey</span></h2>
+        <p class="section-subtitle" data-t="experience.subtitle">Hands-on experience delivering robust systems in fast-paced production and team environments.</p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Landmark Agency -->
+        <div class="timeline-node reveal-up reveal-delay-1">
+          <div class="timeline-commit-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div class="timeline-title-group">
+                <h3>Scrum Master &amp; Web Developer Intern</h3>
+                <div class="timeline-company-name">Landmark Agency</div>
+              </div>
+              <div class="timeline-meta-tags">
+                <span class="timeline-work-type"><i class="fa-solid fa-building"></i> <span data-t="experience.onsite">On-site</span></span>
+                <span class="timeline-date-badge">May 2026 – Jul. 2026</span>
+              </div>
             </div>
-            <div style="display:flex;align-items:center;gap:0.75rem;padding:0.7rem;border-radius:0.5rem;background:rgba(6,182,212,0.08);border:1px solid rgba(6,182,212,0.2);">
-              <i class="fa-solid fa-robot" style="color:#67e8f9;width:1rem;"></i>
-              <span style="font-size:0.82rem;color:var(--text-mid);">AI / Machine Learning & MLOps (Python, Scikit-learn, MLflow)</span>
+            <ul class="timeline-list">
+              <li>Agile Scrum coordination and development contributor for <strong style="color:var(--text-primary);">SikBeauty</strong> and <strong style="color:var(--text-primary);">Aligno</strong> platforms.</li>
+              <li>Engineered full-stack features using React.js, Next.js, Nuxt 4, Vue 3, Pinia, Prisma, PostgreSQL, Redis, Socket.IO, BullMQ, Docker, Zod, Husky, and Vitest.</li>
+            </ul>
+            <div class="timeline-tech-stack">
+              <span class="timeline-tech-pill">React.js</span>
+              <span class="timeline-tech-pill">Nuxt 4</span>
+              <span class="timeline-tech-pill">Vue 3</span>
+              <span class="timeline-tech-pill">PostgreSQL</span>
+              <span class="timeline-tech-pill">Redis</span>
+              <span class="timeline-tech-pill">Socket.IO</span>
+              <span class="timeline-tech-pill">Docker</span>
+              <span class="timeline-tech-pill">Scrum Master</span>
             </div>
-            <div style="display:flex;align-items:center;gap:0.75rem;padding:0.7rem;border-radius:0.5rem;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);">
-              <i class="fa-solid fa-server" style="color:#fde68a;width:1rem;"></i>
-              <span style="font-size:0.82rem;color:var(--text-mid);">DevOps: Docker, AWS, Redis, CI/CD, Linux</span>
+          </div>
+        </div>
+
+        <!-- Bleutiful Communication -->
+        <div class="timeline-node reveal-up reveal-delay-2">
+          <div class="timeline-commit-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div class="timeline-title-group">
+                <h3>Full-Stack Web Developer Intern</h3>
+                <div class="timeline-company-name">Bleutiful Communication</div>
+              </div>
+              <div class="timeline-meta-tags">
+                <span class="timeline-work-type"><i class="fa-solid fa-building"></i> <span data-t="experience.onsite">On-site</span></span>
+                <span class="timeline-date-badge">Nov. 2024 – Dec. 2024</span>
+              </div>
             </div>
-            <div style="display:flex;align-items:center;gap:0.75rem;padding:0.7rem;border-radius:0.5rem;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);">
-              <i class="fa-solid fa-users" style="color:#4ade80;width:1rem;"></i>
-              <span style="font-size:0.82rem;color:var(--text-mid);">Agile Scrum Master & Team Collaboration</span>
+            <ul class="timeline-list">
+              <li>Architected and developed <strong style="color:var(--text-primary);">SaidRahati.com</strong> and contributed to <strong style="color:var(--text-primary);">Concours-International-Piano.com</strong>.</li>
+              <li>Implemented custom Laravel modules, dynamic Tailwind interfaces, and managed deployment on DigitalOcean and AWS EC2.</li>
+            </ul>
+            <div class="timeline-tech-stack">
+              <span class="timeline-tech-pill">Laravel</span>
+              <span class="timeline-tech-pill">TailwindCSS</span>
+              <span class="timeline-tech-pill">JavaScript</span>
+              <span class="timeline-tech-pill">MySQL</span>
+              <span class="timeline-tech-pill">AWS EC2</span>
+              <span class="timeline-tech-pill">DigitalOcean</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tighaline -->
+        <div class="timeline-node reveal-up reveal-delay-3">
+          <div class="timeline-commit-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div class="timeline-title-group">
+                <h3>Full-Stack Web Developer Intern</h3>
+                <div class="timeline-company-name">Tighaline</div>
+              </div>
+              <div class="timeline-meta-tags">
+                <span class="timeline-work-type" style="color:var(--accent-cyan);background:var(--accent-cyan-dim);border-color:rgba(0,229,255,0.3);"><i class="fa-solid fa-wifi"></i> <span data-t="experience.remote">Remote</span></span>
+                <span class="timeline-date-badge">Mar. 2024 – May 2024</span>
+              </div>
+            </div>
+            <ul class="timeline-list">
+              <li>Developed <strong style="color:var(--text-primary);">Tighaline.ma</strong>, a complete e-commerce marketplace platform.</li>
+              <li>Implemented secure customer authentication, catalog search, order management, and responsive storefront design.</li>
+            </ul>
+            <div class="timeline-tech-stack">
+              <span class="timeline-tech-pill">Laravel</span>
+              <span class="timeline-tech-pill">Bootstrap</span>
+              <span class="timeline-tech-pill">MySQL</span>
+              <span class="timeline-tech-pill">E-Commerce</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- BC Skills -->
+        <div class="timeline-node reveal-up reveal-delay-4">
+          <div class="timeline-commit-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header-row">
+              <div class="timeline-title-group">
+                <h3>Full-Stack Web Developer Intern</h3>
+                <div class="timeline-company-name">BC Skills</div>
+              </div>
+              <div class="timeline-meta-tags">
+                <span class="timeline-work-type" style="color:var(--accent-cyan);background:var(--accent-cyan-dim);border-color:rgba(0,229,255,0.3);"><i class="fa-solid fa-wifi"></i> <span data-t="experience.remote">Remote</span></span>
+                <span class="timeline-date-badge">Apr. 2024</span>
+              </div>
+            </div>
+            <ul class="timeline-list">
+              <li>Constructed an internal ERP documentation and technical knowledge portal.</li>
+              <li>Designed system schemas using UML &amp; MERISE methodologies, coupled with a Laravel backend.</li>
+            </ul>
+            <div class="timeline-tech-stack">
+              <span class="timeline-tech-pill">Laravel</span>
+              <span class="timeline-tech-pill">UML / MERISE</span>
+              <span class="timeline-tech-pill">ERP Systems</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── SKILLS ─────────────────────────────────────────────── -->
-  <section class="section" id="skills">
-    <div class="reveal-up">
-      <div class="section-label"><i class="fa-solid fa-code"></i> <span data-t="skills.label">Skills</span></div>
-      <h2 class="section-title"><span class="underline-accent" data-t="skills.title">Technical Expertise</span></h2>
-      <p class="section-subtitle" data-t="skills.subtitle">A comprehensive stack spanning Full-Stack Development and AI/Machine Learning engineering.</p>
-    </div>
+    <!-- ── PROJECTS MATRIX SECTION ── -->
+    <section class="section" id="projects">
+      <div class="section-header reveal-up">
+        <div class="section-tag"><i class="fa-solid fa-code-fork"></i> <span data-t="projects.label">Projects Matrix</span></div>
+        <h2 class="section-title"><span data-t="projects.title">Featured Engineering Work</span></h2>
+        <p class="section-subtitle" data-t="projects.subtitle">A curated collection of full-stack platforms, Machine Learning pipelines, and custom frameworks.</p>
+      </div>
 
-    <div style="margin-top:2.5rem;">
-      <!-- Full-Stack -->
-      <div class="skills-category reveal-up reveal-delay-1">
-        <div class="skills-cat-title"><i class="fa-solid fa-globe"></i> Languages & Web</div>
-        <div class="skills-tags">
-          <span class="skill-tag">PHP</span>
-          <span class="skill-tag">JavaScript / TypeScript</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">GoLang</span>
-          <span class="skill-tag">C / C++</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Bash</span>
-          <span class="skill-tag">HTML / CSS</span>
+      <!-- Advanced Filter & Search Controls -->
+      <div class="projects-control-bar reveal-up">
+        <div class="projects-filter-tabs">
+          <button class="project-tab-btn active" data-filter="all" data-t="projects.all">All Systems</button>
+          <button class="project-tab-btn" data-filter="ai" data-t="projects.ai">AI &amp; ML</button>
+          <button class="project-tab-btn" data-filter="fullstack" data-t="projects.fullstack">Full-Stack</button>
+        </div>
+        <div class="project-search-box">
+          <i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted);font-size:0.8rem;"></i>
+          <input type="text" id="project-search-input" class="project-search-input" placeholder="Search by tech or title..." />
         </div>
       </div>
 
-      <div class="skills-category reveal-up reveal-delay-2">
-        <div class="skills-cat-title"><i class="fa-solid fa-layer-group"></i> Frameworks & Libraries</div>
-        <div class="skills-tags">
-          <span class="skill-tag">Laravel</span>
-          <span class="skill-tag">Laravel Octane</span>
-          <span class="skill-tag">FrankenPHP</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Express</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Vue</span>
-          <span class="skill-tag">Nuxt</span>
-          <span class="skill-tag">Redux / Pinia</span>
-          <span class="skill-tag">TailwindCSS</span>
-          <span class="skill-tag">Bootstrap</span>
-          <span class="skill-tag">Prisma</span>
-          <span class="skill-tag">Socket.IO</span>
-          <span class="skill-tag">BullMQ</span>
-          <span class="skill-tag">Zod</span>
-          <span class="skill-tag">JWT</span>
-        </div>
+      <!-- Dynamic Projects Grid (Populated by JS) -->
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- ── EDUCATION SECTION ── -->
+    <section class="section" id="education">
+      <div class="section-header reveal-up">
+        <div class="section-tag"><i class="fa-solid fa-graduation-cap"></i> <span data-t="education.label">Academic Credentials</span></div>
+        <h2 class="section-title"><span data-t="education.title">Academic Background</span></h2>
+        <p class="section-subtitle" data-t="education.subtitle">Rigorous software engineering, systems networking, and mathematical fundamentals.</p>
       </div>
 
-      <div class="skills-category reveal-up reveal-delay-3">
-        <div class="skills-cat-title"><i class="fa-solid fa-robot"></i> AI / Machine Learning</div>
-        <div class="skills-tags">
-          <span class="skill-tag">NumPy</span>
-          <span class="skill-tag">Pandas</span>
-          <span class="skill-tag">Scikit-learn</span>
-          <span class="skill-tag">Regression</span>
-          <span class="skill-tag">Classification</span>
-          <span class="skill-tag">Clustering (K-Means, DBSCAN)</span>
-          <span class="skill-tag">XGBoost</span>
-          <span class="skill-tag">Random Forest</span>
-          <span class="skill-tag">HistGradientBoosting</span>
-          <span class="skill-tag">KNN</span>
-          <span class="skill-tag">SVR</span>
-          <span class="skill-tag">Imbalanced Learning</span>
-          <span class="skill-tag">GridSearchCV</span>
-          <span class="skill-tag">Joblib</span>
-        </div>
-      </div>
-
-      <div class="skills-category reveal-up reveal-delay-4">
-        <div class="skills-cat-title"><i class="fa-solid fa-chart-line"></i> Data Engineering & MLOps</div>
-        <div class="skills-tags">
-          <span class="skill-tag">ETL / ELT</span>
-          <span class="skill-tag">Apache Airflow</span>
-          <span class="skill-tag">DAGs</span>
-          <span class="skill-tag">MLflow</span>
-          <span class="skill-tag">SQLAlchemy</span>
-          <span class="skill-tag">FastAPI</span>
-          <span class="skill-tag">Streamlit</span>
-          <span class="skill-tag">Plotly</span>
-          <span class="skill-tag">Matplotlib</span>
-          <span class="skill-tag">Seaborn</span>
-          <span class="skill-tag">Pydantic</span>
-          <span class="skill-tag">Uvicorn</span>
-        </div>
-      </div>
-
-      <div class="skills-category reveal-up">
-        <div class="skills-cat-title"><i class="fa-solid fa-database"></i> Databases & DevOps</div>
-        <div class="skills-tags">
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Redis</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Docker Compose</span>
-          <span class="skill-tag">AWS EC2</span>
-          <span class="skill-tag">AWS RDS</span>
-          <span class="skill-tag">AWS ElastiCache</span>
-          <span class="skill-tag">DigitalOcean</span>
-          <span class="skill-tag">Firebase</span>
-          <span class="skill-tag">Nginx</span>
-          <span class="skill-tag">Caddy</span>
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">Git / GitHub</span>
-          <span class="skill-tag">GitHub Actions</span>
-          <span class="skill-tag">Husky</span>
-          <span class="skill-tag">Vitest</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tech icon grid -->
-    <div class="reveal-up" style="margin-top:2.5rem;">
-      <h3 class="skills-cat-title" style="font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-2);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.5rem;">
-        <i class="fa-solid fa-grid-2"></i> <span data-t="skills.techTitle">Technologies & Tools</span>
-      </h3>
-      <div class="tech-grid">
-        <div class="tech-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-        <div class="tech-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-        <div class="tech-item"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
-        <div class="tech-item"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
-        <div class="tech-item"><i class="devicon-go-plain colored"></i><span>GoLang</span></div>
-        <div class="tech-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
-        <div class="tech-item"><i class="devicon-laravel-plain colored"></i><span>Laravel</span></div>
-        <div class="tech-item"><i class="devicon-react-original colored"></i><span>React</span></div>
-        <div class="tech-item"><i class="devicon-vuejs-plain colored"></i><span>Vue</span></div>
-        <div class="tech-item"><i class="devicon-nuxtjs-plain colored"></i><span>Nuxt</span></div>
-        <div class="tech-item"><i class="devicon-nextjs-plain"></i><span>Next.js</span></div>
-        <div class="tech-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
-        <div class="tech-item"><i class="devicon-express-original"></i><span>Express</span></div>
-        <div class="tech-item"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
-        <div class="tech-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-        <div class="tech-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
-        <div class="tech-item"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
-        <div class="tech-item"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
-        <div class="tech-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-        <div class="tech-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
-        <div class="tech-item"><i class="devicon-nginx-original colored"></i><span>Nginx</span></div>
-        <div class="tech-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-        <div class="tech-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
-        <div class="tech-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
-        <div class="tech-item"><i class="devicon-tailwindcss-plain colored"></i><span>Tailwind</span></div>
-        <div class="tech-item"><i class="devicon-pandas-plain colored"></i><span>Pandas</span></div>
-        <div class="tech-item"><i class="devicon-numpy-plain colored"></i><span>NumPy</span></div>
-        <div class="tech-item"><i class="devicon-scikitlearn-plain colored"></i><span>Sklearn</span></div>
-        <div class="tech-item"><i class="devicon-apacheairflow-plain colored"></i><span>Airflow</span></div>
-        <div class="tech-item"><i class="devicon-grafana-plain colored"></i><span>MLflow</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── EXPERIENCE ─────────────────────────────────────────── -->
-  <section class="section" id="experience">
-    <div class="reveal-up">
-      <div class="section-label"><i class="fa-solid fa-briefcase"></i> <span data-t="experience.label">Experience</span></div>
-      <h2 class="section-title"><span class="underline-accent" data-t="experience.title">Professional Journey</span></h2>
-      <p class="section-subtitle" data-t="experience.subtitle">Hands-on internship experience building real-world products in fast-paced environments.</p>
-    </div>
-
-    <div class="timeline" style="margin-top:2.5rem;">
-
-      <!-- Landmark Agency -->
-      <div class="timeline-item reveal-up reveal-delay-1">
-        <div class="timeline-card">
-          <div class="timeline-head">
-            <div>
-              <div class="timeline-title">Scrum Master &amp; Web Developer Intern</div>
-              <div class="timeline-company">Landmark Agency</div>
-            </div>
-            <span class="timeline-date">May 2026 – Jul. 2026</span>
+      <div class="education-grid">
+        <!-- YouCode UM6P -->
+        <div class="edu-card reveal-up reveal-delay-1">
+          <div class="edu-icon-wrap"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="edu-degree">Full-Stack Web Development Program</div>
+          <div class="edu-school">YouCode (UM6P)</div>
+          <p class="edu-desc">Intensive software engineering training covering modern web architectures, agile project-based learning, scalable backend systems, and DevOps automation.</p>
+          <div class="edu-meta">
+            <span data-t="education.location">Safi, Morocco</span>
+            <span class="edu-date">2025 – Present</span>
           </div>
-          <span class="timeline-type"><i class="fa-solid fa-building"></i> <span data-t="experience.onsite">On-site</span></span>
-          <ul class="timeline-bullets">
-            <li>Agile Scrum coordination and contribution to the <strong style="color:var(--text-hi);">SikBeauty</strong> and <strong style="color:var(--text-hi);">Aligno</strong> projects.</li>
-            <li>React.js, Next.js, Nuxt 4, Vue 3, Pinia, Prisma, PostgreSQL, Redis, Socket.IO, BullMQ, Docker, Zod, Husky, Vitest</li>
-          </ul>
         </div>
-      </div>
 
-      <!-- Bleutiful Communication -->
-      <div class="timeline-item reveal-up reveal-delay-2">
-        <div class="timeline-card">
-          <div class="timeline-head">
-            <div>
-              <div class="timeline-title">Full-Stack Web Developer Intern</div>
-              <div class="timeline-company">Bleutiful Communication</div>
-            </div>
-            <span class="timeline-date">Nov. 2024 – Dec. 2024</span>
+        <!-- ISTA NTIC -->
+        <div class="edu-card reveal-up reveal-delay-2">
+          <div class="edu-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
+          <div class="edu-degree">DTS in Networks &amp; Computer Science</div>
+          <div class="edu-school">ISTA NTIC Safi</div>
+          <p class="edu-desc">Two-year diploma covering networking architectures, routing, Linux/Windows system administration, database design, and software fundamentals.</p>
+          <div class="edu-meta">
+            <span data-t="education.location">Safi, Morocco</span>
+            <span class="edu-date">2022 – 2024</span>
           </div>
-          <span class="timeline-type"><i class="fa-solid fa-building"></i> <span data-t="experience.onsite">On-site</span></span>
-          <ul class="timeline-bullets">
-            <li>Developed <strong style="color:var(--text-hi);">SaidRahati.com</strong> and contributed to <strong style="color:var(--text-hi);">Concours-International-Piano.com</strong>.</li>
-            <li>Laravel, TailwindCSS, JavaScript, MySQL — Deployment on DigitalOcean and AWS EC2.</li>
-          </ul>
         </div>
-      </div>
 
-      <!-- Tighaline -->
-      <div class="timeline-item reveal-up reveal-delay-3">
-        <div class="timeline-card">
-          <div class="timeline-head">
-            <div>
-              <div class="timeline-title">Full-Stack Web Developer Intern</div>
-              <div class="timeline-company">Tighaline</div>
-            </div>
-            <span class="timeline-date">Mar. 2024 – May 2024</span>
+        <!-- Baccalaureate -->
+        <div class="edu-card reveal-up reveal-delay-3">
+          <div class="edu-icon-wrap"><i class="fa-solid fa-square-root-variable"></i></div>
+          <div class="edu-degree">Baccalaureate in Mathematical Sciences</div>
+          <div class="edu-school">Al Charif Al Idrissi High School</div>
+          <p class="edu-desc">French option scientific baccalaureate with deep rigorous training in advanced mathematics, analytical reasoning, and algorithmic logic.</p>
+          <div class="edu-meta">
+            <span data-t="education.location">Safi, Morocco</span>
+            <span class="edu-date">2021</span>
           </div>
-          <span class="timeline-type"><i class="fa-solid fa-wifi"></i> <span data-t="experience.remote">Remote</span></span>
-          <ul class="timeline-bullets">
-            <li>Developed <strong style="color:var(--text-hi);">Tighaline.ma</strong>, an e-commerce platform.</li>
-            <li>Laravel, Bootstrap, MySQL — Authentication, products, and orders.</li>
-          </ul>
         </div>
       </div>
+    </section>
 
-      <!-- BC Skills -->
-      <div class="timeline-item reveal-up reveal-delay-4">
-        <div class="timeline-card">
-          <div class="timeline-head">
-            <div>
-              <div class="timeline-title">Full-Stack Web Developer Intern</div>
-              <div class="timeline-company">BC Skills</div>
-            </div>
-            <span class="timeline-date">Apr. 2024</span>
+    <!-- ── CERTIFICATIONS SECTION ── -->
+    <section class="section" id="certifications">
+      <div class="section-header reveal-up">
+        <div class="section-tag"><i class="fa-solid fa-certificate"></i> <span data-t="certifications.label">Verified Credentials</span></div>
+        <h2 class="section-title"><span data-t="certifications.title">Licenses &amp; Certifications</span></h2>
+        <p class="section-subtitle" data-t="certifications.subtitle">Industry-recognized assessments validating problem-solving, language proficiency, and technical frameworks.</p>
+      </div>
+
+      <div class="cert-grid">
+        <a href="https://cert.efset.org/8G1r5N" target="_blank" rel="noopener noreferrer" class="cert-card reveal-up reveal-delay-1">
+          <div class="cert-badge-icon"><i class="fa-solid fa-language"></i></div>
+          <div class="cert-info">
+            <div class="cert-title">EF SET English Certificate</div>
+            <div class="cert-issuer">EF Standard English Test</div>
           </div>
-          <span class="timeline-type"><i class="fa-solid fa-wifi"></i> <span data-t="experience.remote">Remote</span></span>
-          <ul class="timeline-bullets">
-            <li>Developed an ERP documentation website.</li>
-            <li>Laravel, Bootstrap — UML, MERISE.</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── PROJECTS ───────────────────────────────────────────── -->
-  <section class="section" id="projects">
-    <div class="reveal-up">
-      <div class="section-label"><i class="fa-solid fa-folder-open"></i> <span data-t="projects.label">Projects</span></div>
-      <h2 class="section-title"><span class="underline-accent" data-t="projects.title">Featured Work</span></h2>
-      <p class="section-subtitle" data-t="projects.subtitle">A selection of projects combining full-stack engineering and AI/ML development.</p>
-    </div>
-
-    <!-- Filter -->
-    <div class="projects-filter" style="margin-top:2rem;">
-      <button class="filter-btn active" data-filter="all" data-t="projects.all">All</button>
-      <button class="filter-btn" data-filter="ai" data-t="projects.ai">AI / ML</button>
-      <button class="filter-btn" data-filter="fullstack" data-t="projects.fullstack">Full-Stack</button>
-    </div>
-
-    <!-- Grid (populated by JS) -->
-    <div class="projects-grid" id="projects-grid"></div>
-  </section>
-
-  <!-- ── EDUCATION ──────────────────────────────────────────── -->
-  <section class="section" id="education">
-    <div class="reveal-up">
-      <div class="section-label"><i class="fa-solid fa-graduation-cap"></i> <span data-t="education.label">Education</span></div>
-      <h2 class="section-title"><span class="underline-accent" data-t="education.title">Academic Background</span></h2>
-      <p class="section-subtitle" data-t="education.subtitle">A solid foundation in computer science, networks, and modern software engineering.</p>
-    </div>
-
-    <div class="edu-grid" style="margin-top:2.5rem;">
-
-      <div class="edu-card reveal-up reveal-delay-1">
-        <div class="edu-icon"><i class="fa-solid fa-laptop-code"></i></div>
-        <div class="edu-degree">Full-Stack Web Development Program</div>
-        <div class="edu-school">YouCode (UM6P)</div>
-        <p style="font-size:0.8rem;color:var(--text-lo);">Intensive software engineering training covering modern web architectures, DevOps, and project-based learning.</p>
-        <div class="edu-meta">
-          <span data-t="education.location">Safi, Morocco</span>
-          <span class="edu-date">2025 – Present</span>
-        </div>
-      </div>
-
-      <div class="edu-card reveal-up reveal-delay-2">
-        <div class="edu-icon"><i class="fa-solid fa-network-wired"></i></div>
-        <div class="edu-degree">DTS in Networks &amp; Computer Science</div>
-        <div class="edu-school">ISTA NTIC Safi</div>
-        <p style="font-size:0.8rem;color:var(--text-lo);">Two-year technical diploma covering networking fundamentals, system administration, and software development.</p>
-        <div class="edu-meta">
-          <span data-t="education.location">Safi, Morocco</span>
-          <span class="edu-date">2022 – 2024</span>
-        </div>
-      </div>
-
-      <div class="edu-card reveal-up reveal-delay-3">
-        <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
-        <div class="edu-degree">Baccalaureate in Mathematical Sciences — French Option</div>
-        <div class="edu-school">Al Charif Al Idrissi High School</div>
-        <p style="font-size:0.8rem;color:var(--text-lo);">Scientific baccalaureate with a focus on mathematics and analytical thinking.</p>
-        <div class="edu-meta">
-          <span data-t="education.location">Safi, Morocco</span>
-          <span class="edu-date">2021</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── CERTIFICATIONS ─────────────────────────────────────── -->
-  <section class="section" id="certifications">
-    <div class="reveal-up">
-      <div class="section-label"><i class="fa-solid fa-certificate"></i> <span data-t="certifications.label">Certifications</span></div>
-      <h2 class="section-title"><span class="underline-accent" data-t="certifications.title">Licenses &amp; Certifications</span></h2>
-      <p class="section-subtitle" data-t="certifications.subtitle">Professional certifications validating expertise across multiple domains.</p>
-    </div>
-
-    <div class="cert-grid" style="margin-top:2.5rem;">
-
-      <a href="https://cert.efset.org/8G1r5N" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-1">
-        <div class="cert-badge"><i class="fa-solid fa-language"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">EF SET English Certificate</div>
-          <div class="cert-org">EF Standard English Test</div>
-        </div>
-        <span class="cert-level">C1</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/9157ab46a1f1" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-2">
-        <div class="cert-badge"><i class="fab fa-node-js"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">Node.js Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Basic</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/6dca3aabbc76" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-3">
-        <div class="cert-badge"><i class="fab fa-java"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">Java Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Basic</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/2f87f3f3728a" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-4">
-        <div class="cert-badge"><i class="fab fa-react"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">React Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Basic</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/3a883e4626f5" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-1">
-        <div class="cert-badge"><i class="fa-solid fa-diagram-project"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">REST API Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Intermediate</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/dad983a83fa3" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-2">
-        <div class="cert-badge"><i class="fa-solid fa-database"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">SQL Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Advanced</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/b499b70c263a" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-3">
-        <div class="cert-badge"><i class="fa-solid fa-database"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">SQL Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Intermediate</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/823858e6d61b" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-4">
-        <div class="cert-badge"><i class="fa-solid fa-database"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">SQL Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Basic</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/65a33149166b" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-1">
-        <div class="cert-badge"><i class="fab fa-js"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">JavaScript Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Intermediate</span>
-      </a>
-
-      <a href="https://www.hackerrank.com/certificates/72cf2aad10fb" target="_blank" rel="noopener" class="cert-card reveal-up reveal-delay-2">
-        <div class="cert-badge"><i class="fab fa-js"></i></div>
-        <div class="cert-info">
-          <div class="cert-name">JavaScript Certification</div>
-          <div class="cert-org">HackerRank</div>
-        </div>
-        <span class="cert-level">Basic</span>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- ── CONTACT ────────────────────────────────────────────── -->
-  <section class="section" id="contact">
-    <div class="reveal-up">
-      <div class="section-label"><i class="fa-solid fa-paper-plane"></i> <span data-t="contact.label">Contact</span></div>
-      <h2 class="section-title"><span class="underline-accent" data-t="contact.title">Get In Touch</span></h2>
-      <p class="section-subtitle" data-t="contact.subtitle">Open to full-time roles, internships, freelance projects, and collaborations.</p>
-    </div>
-
-    <div class="contact-grid" style="margin-top:2.5rem;">
-      <!-- Contact info -->
-      <div>
-        <a href="mailto:slaoui.badr.eddine.sdv@gmail.com" class="contact-card reveal-up reveal-delay-1">
-          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div>
-            <div class="contact-label" data-t="contact.emailLabel">Email</div>
-            <div class="contact-value">slaoui.badr.eddine.sdv@gmail.com</div>
-          </div>
+          <span class="cert-level-tag">C1 Advanced</span>
         </a>
 
-        <a href="tel:+212680981007" class="contact-card reveal-up reveal-delay-2">
-          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <div class="contact-label" data-t="contact.phoneLabel">Phone</div>
-            <div class="contact-value">(+212) 680-981007</div>
+        <a href="https://www.hackerrank.com/certificates/9157ab46a1f1" target="_blank" rel="noopener noreferrer" class="cert-card reveal-up reveal-delay-2">
+          <div class="cert-badge-icon"><i class="fa-brands fa-node-js"></i></div>
+          <div class="cert-info">
+            <div class="cert-title">Node.js Certification</div>
+            <div class="cert-issuer">HackerRank</div>
           </div>
+          <span class="cert-level-tag">Verified</span>
         </a>
 
-        <a href="https://github.com/Badr-Eddine-Slaoui" target="_blank" rel="noopener" class="contact-card reveal-up reveal-delay-3">
-          <div class="contact-icon"><i class="fab fa-github"></i></div>
-          <div>
-            <div class="contact-label" data-t="contact.githubLabel">GitHub</div>
-            <div class="contact-value">Badr-Eddine-Slaoui</div>
+        <a href="https://www.hackerrank.com/certificates/6dca3aabbc76" target="_blank" rel="noopener noreferrer" class="cert-card reveal-up reveal-delay-3">
+          <div class="cert-badge-icon"><i class="fa-brands fa-java"></i></div>
+          <div class="cert-info">
+            <div class="cert-title">Java Certification</div>
+            <div class="cert-issuer">HackerRank</div>
           </div>
+          <span class="cert-level-tag">Verified</span>
         </a>
 
-        <a href="https://linkedin.com/in/badr-eddine-slaoui" target="_blank" rel="noopener" class="contact-card reveal-up reveal-delay-4">
-          <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-          <div>
-            <div class="contact-label" data-t="contact.linkedinLabel">LinkedIn</div>
-            <div class="contact-value">badr-eddine-slaoui</div>
+        <a href="https://www.hackerrank.com/certificates/2f87f3f3728a" target="_blank" rel="noopener noreferrer" class="cert-card reveal-up reveal-delay-4">
+          <div class="cert-badge-icon"><i class="fa-brands fa-react"></i></div>
+          <div class="cert-info">
+            <div class="cert-title">React Certification</div>
+            <div class="cert-issuer">HackerRank</div>
           </div>
+          <span class="cert-level-tag">Verified</span>
+        </a>
+
+        <a href="https://www.hackerrank.com/certificates/3a883e4626f5" target="_blank" rel="noopener noreferrer" class="cert-card reveal-up reveal-delay-1">
+          <div class="cert-badge-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="cert-info">
+            <div class="cert-title">REST API Certification</div>
+            <div class="cert-issuer">HackerRank</div>
+          </div>
+          <span class="cert-level-tag">Intermediate</span>
+        </a>
+
+        <a href="https://www.hackerrank.com/certificates/dad983a83fa3" target="_blank" rel="noopener noreferrer" class="cert-card reveal-up reveal-delay-2">
+          <div class="cert-badge-icon"><i class="fa-solid fa-database"></i></div>
+          <div class="cert-info">
+            <div class="cert-title">SQL Certification</div>
+            <div class="cert-issuer">HackerRank</div>
+          </div>
+          <span class="cert-level-tag">Advanced</span>
+        </a>
+
+        <a href="https://www.hackerrank.com/certificates/65a33149166b" target="_blank" rel="noopener noreferrer" class="cert-card reveal-up reveal-delay-3">
+          <div class="cert-badge-icon"><i class="fa-brands fa-js"></i></div>
+          <div class="cert-info">
+            <div class="cert-title">JavaScript Certification</div>
+            <div class="cert-issuer">HackerRank</div>
+          </div>
+          <span class="cert-level-tag">Intermediate</span>
+        </a>
+
+        <a href="https://www.hackerrank.com/certificates/b499b70c263a" target="_blank" rel="noopener noreferrer" class="cert-card reveal-up reveal-delay-4">
+          <div class="cert-badge-icon"><i class="fa-solid fa-database"></i></div>
+          <div class="cert-info">
+            <div class="cert-title">SQL Certification</div>
+            <div class="cert-issuer">HackerRank</div>
+          </div>
+          <span class="cert-level-tag">Intermediate</span>
         </a>
       </div>
+    </section>
 
-      <!-- CV Downloads -->
-      <div class="reveal-up reveal-delay-2">
-        <h3 style="font-size:1rem;font-weight:600;color:var(--text-hi);margin-bottom:0.35rem;" data-t="contact.cvTitle">Download My CV</h3>
-        <p style="font-size:0.82rem;color:var(--text-mid);margin-bottom:1.2rem;" data-t="contact.cvSubtitle">Choose the version that suits your needs.</p>
+    <!-- ── CV DOWNLOAD CENTER & CONTACT SECTION ── -->
+    <section class="section" id="contact">
+      <div class="section-header reveal-up">
+        <div class="section-tag"><i class="fa-solid fa-terminal"></i> <span data-t="contact.label">Connection Terminal</span></div>
+        <h2 class="section-title"><span data-t="contact.title">CV Hub &amp; Direct Connection</span></h2>
+        <p class="section-subtitle" data-t="contact.subtitle">Choose your preferred curriculum vitae version and get in direct contact for engineering roles or collaborations.</p>
+      </div>
 
-        <div class="cv-grid">
-          <a class="cv-card" href="PDFs/CV FullStack English.pdf" download>
-            <div class="cv-card-icon"><i class="fa-solid fa-globe"></i></div>
-            <div class="cv-card-title" data-t="cv.fsEn">Full-Stack CV (EN)</div>
-            <div class="cv-card-sub">Full-Stack · English</div>
-            <div class="cv-card-dl"><i class="fa-solid fa-download"></i> Download PDF</div>
-          </a>
+      <div class="contact-landscape-deck">
+        <!-- Left: Downloadable PDFs Hub -->
+        <div class="cv-hub-card reveal-up reveal-delay-1" id="cv-hub-section">
+          <div class="cv-hub-head">
+            <i class="fa-solid fa-file-pdf"></i>
+            <div class="cv-hub-title" data-t="contact.cvTitle">Curriculum Vitae Repository</div>
+          </div>
+          <p class="cv-hub-subtitle" data-t="contact.cvSubtitle">Tailored CV versions available for direct download in both English and French.</p>
 
-          <a class="cv-card" href="PDFs/CV FullStack French.pdf" download>
-            <div class="cv-card-icon"><i class="fa-solid fa-flag"></i></div>
-            <div class="cv-card-title" data-t="cv.fsFr">Full-Stack CV (FR)</div>
-            <div class="cv-card-sub">Full-Stack · Français</div>
-            <div class="cv-card-dl"><i class="fa-solid fa-download"></i> Télécharger PDF</div>
-          </a>
+          <div class="cv-download-cards-grid">
+            <!-- FullStack EN -->
+            <a href="PDFs/CV FullStack English.pdf" download class="cv-file-card">
+              <div class="cv-file-icon"><i class="fa-solid fa-code"></i></div>
+              <div class="cv-file-name" data-t="cv.fsEn">Full-Stack CV (EN)</div>
+              <div class="cv-file-meta">PDF · 615 KB · English</div>
+              <div class="cv-download-action"><i class="fa-solid fa-download"></i> Download PDF</div>
+            </a>
 
-          <a class="cv-card" href="PDFs/CV AI English.pdf" download>
-            <div class="cv-card-icon"><i class="fa-solid fa-robot"></i></div>
-            <div class="cv-card-title" data-t="cv.aiEn">AI / ML CV (EN)</div>
-            <div class="cv-card-sub">AI &amp; ML · English</div>
-            <div class="cv-card-dl"><i class="fa-solid fa-download"></i> Download PDF</div>
-          </a>
+            <!-- FullStack FR -->
+            <a href="PDFs/CV FullStack French.pdf" download class="cv-file-card">
+              <div class="cv-file-icon"><i class="fa-solid fa-layer-group"></i></div>
+              <div class="cv-file-name" data-t="cv.fsFr">Full-Stack CV (FR)</div>
+              <div class="cv-file-meta">PDF · 616 KB · Français</div>
+              <div class="cv-download-action"><i class="fa-solid fa-download"></i> Télécharger PDF</div>
+            </a>
 
-          <a class="cv-card" href="PDFs/CV AI French.pdf" download>
-            <div class="cv-card-icon"><i class="fa-solid fa-brain"></i></div>
-            <div class="cv-card-title" data-t="cv.aiFr">AI / ML CV (FR)</div>
-            <div class="cv-card-sub">IA &amp; ML · Français</div>
-            <div class="cv-card-dl"><i class="fa-solid fa-download"></i> Télécharger PDF</div>
-          </a>
+            <!-- AI EN -->
+            <a href="PDFs/CV AI English.pdf" download class="cv-file-card">
+              <div class="cv-file-icon"><i class="fa-solid fa-robot"></i></div>
+              <div class="cv-file-name" data-t="cv.aiEn">AI / ML CV (EN)</div>
+              <div class="cv-file-meta">PDF · 613 KB · English</div>
+              <div class="cv-download-action"><i class="fa-solid fa-download"></i> Download PDF</div>
+            </a>
+
+            <!-- AI FR -->
+            <a href="PDFs/CV AI French.pdf" download class="cv-file-card">
+              <div class="cv-file-icon"><i class="fa-solid fa-brain"></i></div>
+              <div class="cv-file-name" data-t="cv.aiFr">AI / ML CV (FR)</div>
+              <div class="cv-file-meta">PDF · 614 KB · Français</div>
+              <div class="cv-download-action"><i class="fa-solid fa-download"></i> Télécharger PDF</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Direct Contact & Message Console -->
+        <div class="contact-hub-card reveal-up reveal-delay-2">
+          <div class="contact-channels-list">
+            <!-- Email -->
+            <div class="contact-channel-item" id="copy-email-box" title="Click to copy email">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <div class="channel-type" data-t="contact.emailLabel">Email Address</div>
+                  <div class="channel-value">slaoui.badr.eddine.sdv@gmail.com</div>
+                </div>
+              </div>
+              <button class="channel-copy-btn" aria-label="Copy Email"><i class="fa-regular fa-copy"></i></button>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-channel-item" id="copy-phone-box" title="Click to copy phone">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <div class="channel-type" data-t="contact.phoneLabel">Phone / WhatsApp</div>
+                  <div class="channel-value">(+212) 680-981007</div>
+                </div>
+              </div>
+              <button class="channel-copy-btn" aria-label="Copy Phone"><i class="fa-regular fa-copy"></i></button>
+            </div>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Badr-Eddine-Slaoui" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <div class="channel-type">GitHub Profile</div>
+                  <div class="channel-value">github.com/Badr-Eddine-Slaoui</div>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--text-muted);font-size:0.85rem;"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/badr-eddine-slaoui" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <div class="channel-left">
+                <div class="channel-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div>
+                  <div class="channel-type">LinkedIn Network</div>
+                  <div class="channel-value">linkedin.com/in/badr-eddine-slaoui</div>
+                </div>
+              </div>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--text-muted);font-size:0.85rem;"></i>
+            </a>
+          </div>
+
+          <!-- Quick Dispatch Message Box -->
+          <form class="quick-message-box" id="quick-contact-form">
+            <div class="quick-msg-title"><i class="fa-solid fa-bolt"></i> <span>Direct Message Dispatch</span></div>
+            <input type="text" id="sender-name" class="quick-msg-input" placeholder="Your Name or Organization..." required />
+            <input type="email" id="sender-email" class="quick-msg-input" placeholder="Your Email Address..." required />
+            <textarea id="sender-message" class="quick-msg-textarea" placeholder="How can we collaborate? Type your message..." required></textarea>
+            <button type="submit" class="btn-cyber-primary" style="justify-content:center;padding:0.75rem;">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Transmit Message</span>
+            </button>
+          </form>
         </div>
       </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-left">
+      <span class="hud-status-dot" style="width:6px;height:6px;"></span>
+      <span data-t="footer">Engineering Portfolio © 2026 Badr Eddine Slaoui. Built with Vanilla Web Standards.</span>
     </div>
-  </section>
+    <div class="footer-nav">
+      <a href="https://github.com/Badr-Eddine-Slaoui" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/badr-eddine-slaoui" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="#hero"><i class="fa-solid fa-arrow-up"></i> Top</a>
+    </div>
+  </footer>
 
-</main>
+  <!-- ── FLOATING CONTROLS ── -->
+  <!-- Scroll to Top Button -->
+  <button id="scroll-top" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
-<!-- ── FOOTER ───────────────────────────────────────────────── -->
-<footer>
-  <span data-t="footer">Built with passion by Badr Eddine Slaoui · 2026</span>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/Badr-Eddine-Slaoui" target="_blank" rel="noopener">GitHub</a>
-  &nbsp;·&nbsp;
-  <a href="https://linkedin.com/in/badr-eddine-slaoui" target="_blank" rel="noopener">LinkedIn</a>
-</footer>
+  <!-- Global Action Toast -->
+  <div id="toast"><i class="fa-solid fa-circle-check"></i> <span id="toast-text">Copied to clipboard</span></div>
 
-<!-- ── Scroll to top ────────────────────────────────────────── -->
-<button id="scroll-top" aria-label="Scroll to top">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
-
-<!-- Main script -->
-<script src="main.js"></script>
-
+  <!-- Main JavaScript Engine -->
+  <script src="main.js"></script>
 </body>
 </html>

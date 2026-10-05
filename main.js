@@ -1,11 +1,25 @@
 /* ============================================================
-   PORTFOLIO — main.js
+   PORTFOLIO ENGINE — main.js
+   Architecture: High-Tech Cyber Engineering / Linux / AI
+   Features:
+   - Multilingual Engine (EN, FR, AR with RTL support)
+   - Interactive Linux Terminal Sandbox (CLI commands & neofetch)
+   - Dynamic Typewriter Subtitle Engine
+   - Real-time Project Filtering & Keyword Search
+   - Real-time Skills Matrix Highlighting
+   - Clipboard One-Click Copy & Toast Notifications
+   - Smooth Nav Scroll Spy & Mobile Menu Control
    ============================================================ */
 
-/* ── Translation data ──────────────────────────────────────── */
+/* ── 1. TRANSLATION SYSTEM ──────────────────────────────────── */
 const TRANSLATIONS = {
   en: {
     dir: 'ltr',
+    hud: {
+      status: 'SYS: ONLINE',
+      location: 'SAFI, MOROCCO [UTC+1]',
+      availability: 'AVAILABLE FOR WORK',
+    },
     nav: {
       home: 'Home',
       about: 'About',
@@ -13,9 +27,9 @@ const TRANSLATIONS = {
       experience: 'Experience',
       projects: 'Projects',
       education: 'Education',
-      certifications: 'Certifications',
+      certifications: 'Certs',
       contact: 'Contact',
-      downloadCV: 'Download CV',
+      downloadCV: 'CV Hub',
     },
     cv: {
       fsEn: 'Full-Stack CV (EN)',
@@ -25,75 +39,77 @@ const TRANSLATIONS = {
     },
     hero: {
       badge: 'Available for Opportunities',
-      role: 'Full-Stack Developer & AI/ML Engineer',
-      quote: 'Designing scalable systems and turning ideas into production-ready digital products — while turning data into reliable predictions and building intelligent systems from experimentation to deployment.',
+      quote: 'Designing resilient, scalable web architectures and engineering production-ready predictive AI systems — bridging modern software engineering with end-to-end data intelligence.',
+      ctaProjects: 'Explore Projects',
+      ctaCV: 'Download CVs',
+      ctaContact: 'Get In Touch',
       location: 'Safi, Morocco',
-      ctaProjects: 'View Projects',
-      ctaContact: 'Contact Me',
     },
     stats: {
       exp: 'Years Exp.',
       projects: 'Projects',
-      tech: 'Technologies',
+      tech: 'Tech Stack',
     },
     about: {
-      label: 'About Me',
+      label: 'System Specifications',
       title: 'Who I Am',
-      subtitle: 'A passionate developer bridging the worlds of Full-Stack Engineering and Artificial Intelligence.',
-      para1: 'I\'m Badr Eddine Slaoui, a Junior Full-Stack Web Developer and AI/ML Engineer based in Safi, Morocco. I specialize in building production-ready web applications with Laravel, React, Vue, and Node.js — while also developing end-to-end machine learning systems with Python, Scikit-learn, FastAPI, and MLOps tools.',
-      para2: 'I thrive at the intersection of clean architecture and intelligent automation, turning complex requirements into scalable, maintainable digital products.',
-      langTitle: 'Languages',
+      subtitle: 'A passionate developer bridging the worlds of Full-Stack Web Engineering and Artificial Intelligence.',
+      para1: 'I\'m Badr Eddine Slaoui, a Full-Stack Web Developer and AI/ML Engineer based in Safi, Morocco. I specialize in building production-ready web applications with Laravel, React, Vue, and Node.js — while also developing end-to-end machine learning systems with Python, Scikit-learn, FastAPI, and MLOps tools.',
+      para2: 'I thrive at the intersection of clean architecture and intelligent automation, turning complex operational requirements into scalable, secure, and maintainable digital products.',
+      langTitle: 'Languages Proficiency',
     },
     skills: {
-      label: 'Skills',
+      label: 'Skills Matrix',
       title: 'Technical Expertise',
-      subtitle: 'A comprehensive stack spanning Full-Stack Development and AI/Machine Learning engineering.',
-      techTitle: 'Technologies & Tools',
+      subtitle: 'A structured overview of core technologies spanning Full-Stack Engineering, Machine Learning, and DevOps.',
+      techTitle: 'Primary Tooling & Ecosystem Matrix',
     },
     experience: {
-      label: 'Experience',
+      label: 'Commit History',
       title: 'Professional Journey',
-      subtitle: 'Hands-on internship experience building real-world products in fast-paced environments.',
+      subtitle: 'Hands-on experience delivering robust systems in fast-paced production and team environments.',
       onsite: 'On-site',
       remote: 'Remote',
     },
     projects: {
-      label: 'Projects',
-      title: 'Featured Work',
-      subtitle: 'A selection of projects combining full-stack engineering and AI/ML development.',
-      all: 'All',
-      ai: 'AI / ML',
+      label: 'Projects Matrix',
+      title: 'Featured Engineering Work',
+      subtitle: 'A curated collection of full-stack platforms, Machine Learning pipelines, and custom frameworks.',
+      all: 'All Systems',
+      ai: 'AI & ML',
       fullstack: 'Full-Stack',
-      viewOnGithub: 'View on GitHub',
+      viewRepo: 'Source Code',
     },
     education: {
-      label: 'Education',
+      label: 'Academic Credentials',
       title: 'Academic Background',
-      subtitle: 'A solid foundation in computer science, networks, and modern software engineering.',
+      subtitle: 'Rigorous software engineering, systems networking, and mathematical fundamentals.',
       location: 'Safi, Morocco',
     },
     certifications: {
-      label: 'Certifications',
+      label: 'Verified Credentials',
       title: 'Licenses & Certifications',
-      subtitle: 'Professional certifications validating expertise across multiple domains.',
-      viewCert: 'View Certificate',
+      subtitle: 'Industry-recognized assessments validating problem-solving, language proficiency, and technical frameworks.',
     },
     contact: {
-      label: 'Contact',
-      title: 'Get In Touch',
-      subtitle: 'Open to full-time roles, internships, freelance projects, and collaborations.',
-      emailLabel: 'Email',
-      phoneLabel: 'Phone',
-      githubLabel: 'GitHub',
-      linkedinLabel: 'LinkedIn',
-      cvTitle: 'Download My CV',
-      cvSubtitle: 'Choose the version that suits your needs.',
+      label: 'Connection Terminal',
+      title: 'CV Hub & Direct Connection',
+      subtitle: 'Choose your preferred curriculum vitae version and get in direct contact for engineering roles or collaborations.',
+      cvTitle: 'Curriculum Vitae Repository',
+      cvSubtitle: 'Tailored CV versions available for direct download in both English and French.',
+      emailLabel: 'Email Address',
+      phoneLabel: 'Phone / WhatsApp',
     },
-    footer: 'Built with passion by Badr Eddine Slaoui · 2026',
+    footer: 'Engineering Portfolio © 2026 Badr Eddine Slaoui. Built with Vanilla Web Standards.',
   },
 
   fr: {
     dir: 'ltr',
+    hud: {
+      status: 'SYS: EN LIGNE',
+      location: 'SAFI, MAROC [UTC+1]',
+      availability: 'DISPONIBLE POUR MISSIONS',
+    },
     nav: {
       home: 'Accueil',
       about: 'À propos',
@@ -101,9 +117,9 @@ const TRANSLATIONS = {
       experience: 'Expérience',
       projects: 'Projets',
       education: 'Formation',
-      certifications: 'Certifications',
+      certifications: 'Certifs',
       contact: 'Contact',
-      downloadCV: 'Télécharger CV',
+      downloadCV: 'Espace CV',
     },
     cv: {
       fsEn: 'CV Full-Stack (EN)',
@@ -112,76 +128,78 @@ const TRANSLATIONS = {
       aiFr: 'CV IA / ML (FR)',
     },
     hero: {
-      badge: 'Disponible pour des opportunités',
-      role: 'Développeur Full-Stack & Ingénieur IA/ML',
-      quote: 'Concevoir des systèmes évolutifs et transformer des idées en produits numériques prêts pour la production — tout en transformant les données en prédictions fiables et en construisant des systèmes intelligents.',
+      badge: 'Disponible pour opportunités',
+      quote: 'Conception d\'architectures web résilientes et évolutives et ingénierie de systèmes d\'IA prédictifs prêts pour la production — unissant génie logiciel moderne et intelligence des données.',
+      ctaProjects: 'Explorer Projets',
+      ctaCV: 'Télécharger CVs',
+      ctaContact: 'Me Contacter',
       location: 'Safi, Maroc',
-      ctaProjects: 'Voir les projets',
-      ctaContact: 'Me contacter',
     },
     stats: {
       exp: 'Ans d\'Exp.',
       projects: 'Projets',
-      tech: 'Technologies',
+      tech: 'Stack Tech',
     },
     about: {
-      label: 'À propos',
+      label: 'Spécifications Système',
       title: 'Qui suis-je',
-      subtitle: 'Un développeur passionné à la croisée du développement Full-Stack et de l\'Intelligence Artificielle.',
-      para1: 'Je suis Badr Eddine Slaoui, développeur web Full-Stack junior et ingénieur IA/ML basé à Safi, Maroc. Je me spécialise dans la construction d\'applications web prêtes pour la production avec Laravel, React, Vue et Node.js, tout en développant des systèmes de machine learning avec Python et les outils MLOps.',
-      para2: 'Je m\'épanouis à l\'intersection de l\'architecture propre et de l\'automatisation intelligente, transformant des exigences complexes en produits numériques évolutifs et maintenables.',
-      langTitle: 'Langues',
+      subtitle: 'Un ingénieur passionné à la croisée du développement Full-Stack et de l\'Intelligence Artificielle.',
+      para1: 'Je suis Badr Eddine Slaoui, développeur web Full-Stack et ingénieur IA/ML basé à Safi, Maroc. Je conçois des applications web prêtes pour la production avec Laravel, React, Vue et Node.js, tout en développant des systèmes de Machine Learning de bout en bout avec Python, Scikit-learn, FastAPI et MLOps.',
+      para2: 'Je m\'épanouis à l\'intersection de l\'architecture logicielle propre et de l\'automatisation intelligente, transformant des exigences complexes en produits numériques performants et sécurisés.',
+      langTitle: 'Maîtrise des Langues',
     },
     skills: {
-      label: 'Compétences',
+      label: 'Matrice de Compétences',
       title: 'Expertise Technique',
-      subtitle: 'Un stack complet couvrant le développement Full-Stack et l\'ingénierie IA/ML.',
-      techTitle: 'Technologies & Outils',
+      subtitle: 'Un aperçu structuré des technologies clés en développement Full-Stack, IA/ML et DevOps.',
+      techTitle: 'Matrice des Outils & Écosystèmes',
     },
     experience: {
-      label: 'Expérience',
+      label: 'Historique des Commits',
       title: 'Parcours Professionnel',
-      subtitle: 'Des stages pratiques dans des environnements dynamiques, construisant des produits réels.',
+      subtitle: 'Expérience pratique dans la livraison de systèmes robustes au sein d\'équipes agiles.',
       onsite: 'Présentiel',
       remote: 'Télétravail',
     },
     projects: {
-      label: 'Projets',
-      title: 'Travaux Sélectionnés',
-      subtitle: 'Une sélection de projets combinant ingénierie full-stack et développement IA/ML.',
-      all: 'Tous',
-      ai: 'IA / ML',
+      label: 'Matrice de Projets',
+      title: 'Travaux d\'Ingénierie',
+      subtitle: 'Sélection de plateformes complètes, pipelines de Machine Learning et frameworks sur-mesure.',
+      all: 'Tous les Systèmes',
+      ai: 'IA & ML',
       fullstack: 'Full-Stack',
-      viewOnGithub: 'Voir sur GitHub',
+      viewRepo: 'Code Source',
     },
     education: {
-      label: 'Formation',
+      label: 'Diplômes & Formation',
       title: 'Parcours Académique',
-      subtitle: 'Une solide formation en informatique, réseaux et génie logiciel moderne.',
+      subtitle: 'Formation rigoureuse en génie logiciel, réseaux informatiques et mathématiques appliquées.',
       location: 'Safi, Maroc',
     },
     certifications: {
-      label: 'Certifications',
+      label: 'Certifications Vérifiées',
       title: 'Licences & Certifications',
-      subtitle: 'Des certifications professionnelles validant l\'expertise dans plusieurs domaines.',
-      viewCert: 'Voir le certificat',
+      subtitle: 'Évaluations techniques reconnues validant la maîtrise des algorithmes, frameworks et de l\'anglais.',
     },
     contact: {
-      label: 'Contact',
-      title: 'Prendre Contact',
-      subtitle: 'Ouvert aux postes à plein temps, stages, projets freelance et collaborations.',
-      emailLabel: 'Email',
-      phoneLabel: 'Téléphone',
-      githubLabel: 'GitHub',
-      linkedinLabel: 'LinkedIn',
-      cvTitle: 'Télécharger mon CV',
-      cvSubtitle: 'Choisissez la version adaptée à vos besoins.',
+      label: 'Terminal de Connexion',
+      title: 'Espace CV & Contact Direct',
+      subtitle: 'Téléchargez la version de CV adaptée à votre besoin et contactez-moi pour toute opportunité.',
+      cvTitle: 'Répertoire des CVs',
+      cvSubtitle: 'Versions adaptées disponibles en téléchargement direct en français et en anglais.',
+      emailLabel: 'Adresse Email',
+      phoneLabel: 'Téléphone / WhatsApp',
     },
-    footer: 'Créé avec passion par Badr Eddine Slaoui · 2026',
+    footer: 'Portfolio d\'Ingénierie © 2026 Badr Eddine Slaoui. Conçu selon les standards Web modernes.',
   },
 
   ar: {
     dir: 'rtl',
+    hud: {
+      status: 'النظام: متصل',
+      location: 'آسفي، المغرب [UTC+1]',
+      availability: 'متاح للفرص والمشاريع',
+    },
     nav: {
       home: 'الرئيسية',
       about: 'عني',
@@ -191,7 +209,7 @@ const TRANSLATIONS = {
       education: 'التعليم',
       certifications: 'الشهادات',
       contact: 'اتصل بي',
-      downloadCV: 'تحميل السيرة',
+      downloadCV: 'السيرة الذاتية',
     },
     cv: {
       fsEn: 'CV تطوير الويب (EN)',
@@ -200,76 +218,73 @@ const TRANSLATIONS = {
       aiFr: 'CV الذكاء الاصطناعي (FR)',
     },
     hero: {
-      badge: 'متاح للفرص',
-      role: 'مطوّر Full-Stack ومهندس ذكاء اصطناعي',
-      quote: 'تصميم أنظمة قابلة للتوسع وتحويل الأفكار إلى منتجات رقمية جاهزة للإنتاج — مع تحويل البيانات إلى تنبؤات موثوقة وبناء أنظمة ذكية من التجريب إلى النشر.',
-      location: 'آسفي، المغرب',
-      ctaProjects: 'عرض المشاريع',
+      badge: 'متاح للفرص المهنية',
+      quote: 'تصميم وبناء بنى تحتية برمجية قابلة للتوسع وهندسة أنظمة ذكاء اصطناعي تنبؤية جاهزة للإنتاج — ربط هندسة البرمجيات الحديثة بذكاء وتحليل البيانات الشامل.',
+      ctaProjects: 'استكشف المشاريع',
+      ctaCV: 'تحميل السير الذاتية',
       ctaContact: 'تواصل معي',
+      location: 'آسفي، المغرب',
     },
     stats: {
       exp: 'سنوات خبرة',
-      projects: 'مشروع',
-      tech: 'تقنية',
+      projects: 'مشروع منجز',
+      tech: 'تقنية وأداة',
     },
     about: {
-      label: 'عني',
+      label: 'مواصفات النظام',
       title: 'من أنا',
-      subtitle: 'مطور شغوف يجمع بين عالم التطوير الكامل والذكاء الاصطناعي.',
-      para1: 'أنا بدر الدين السلاوي، مطور ويب Full-Stack ومهندس ذكاء اصطناعي من آسفي، المغرب. أتخصص في بناء تطبيقات ويب جاهزة للإنتاج باستخدام Laravel و React و Vue و Node.js، إلى جانب تطوير أنظمة التعلم الآلي باستخدام Python وأدوات MLOps.',
-      para2: 'أتميز في نقطة التقاطع بين البنية النظيفة والأتمتة الذكية، محوّلاً المتطلبات المعقدة إلى منتجات رقمية قابلة للتطوير والصيانة.',
-      langTitle: 'اللغات',
+      subtitle: 'مهندس برمجيات شغوف يجمع بين عالم التطوير الشامل Full-Stack وأنظمة الذكاء الاصطناعي الحديثة.',
+      para1: 'أنا بدر الدين السلاوي، مطوّر ويب Full-Stack ومهندس ذكاء اصطناعي من آسفي، المغرب. أتخصص في بناء تطبيقات ويب متطورة وقوية باستخدام Laravel و React و Vue و Node.js، إلى جانب تطوير أنظمة التعلم الآلي الشاملة باستخدام Python و Scikit-learn و FastAPI وأدوات MLOps.',
+      para2: 'أتميز في نقطة التقاطع بين الهندسة المعمارية النظيفة والأتمتة الذكية، محوّلاً المتطلبات التقنية المعقدة إلى منتجات رقمية قابلة للتوسع وآمنة وسهلة الصيانة.',
+      langTitle: 'إتقان اللغات',
     },
     skills: {
-      label: 'المهارات',
+      label: 'مصفوفة المهارات',
       title: 'الخبرة التقنية',
-      subtitle: 'مجموعة شاملة تغطي تطوير الويب الكامل وهندسة الذكاء الاصطناعي.',
-      techTitle: 'التقنيات والأدوات',
+      subtitle: 'نظرة منظمة على التقنيات الأساسية التي تغطي تطوير الويب الشامل والتعلم الآلي وإدارة السحابة.',
+      techTitle: 'مصفوفة الأدوات والبيئات التقنية',
     },
     experience: {
-      label: 'الخبرة',
+      label: 'سجل الالتزامات البرمجية',
       title: 'المسار المهني',
-      subtitle: 'خبرة تدريبية عملية في بيئات ديناميكية لبناء منتجات حقيقية.',
+      subtitle: 'خبرة عملية مثبتة في تسليم أنظمة برمجية في بيئات عمل سريعة وفرق مرنة.',
       onsite: 'حضوري',
       remote: 'عن بُعد',
     },
     projects: {
-      label: 'المشاريع',
-      title: 'أعمال مختارة',
-      subtitle: 'مجموعة مختارة من المشاريع التي تجمع هندسة الويب الكاملة وتطوير الذكاء الاصطناعي.',
-      all: 'الكل',
+      label: 'مصفوفة المشاريع',
+      title: 'أعمال هندسية مميزة',
+      subtitle: 'مجموعة مختارة من منصات الويب الكاملة وخطوط أنابيب التعلم الآلي وأطر العمل المخصصة.',
+      all: 'جميع الأنظمة',
       ai: 'ذكاء اصطناعي',
       fullstack: 'Full-Stack',
-      viewOnGithub: 'عرض على GitHub',
+      viewRepo: 'الكود المصدري',
     },
     education: {
-      label: 'التعليم',
-      title: 'المسار الأكاديمي',
-      subtitle: 'أساس متين في علوم الحاسوب والشبكات وهندسة البرمجيات الحديثة.',
+      label: 'المؤهلات الأكاديمية',
+      title: 'المسار التعليمي',
+      subtitle: 'تدريب مكثف في هندسة البرمجيات وشبكات الحاسوب والرياضيات التطبيقية.',
       location: 'آسفي، المغرب',
     },
     certifications: {
-      label: 'الشهادات',
+      label: 'الشهادات المعتمدة',
       title: 'التراخيص والشهادات',
-      subtitle: 'شهادات مهنية تُثبت الكفاءة في مجالات متعددة.',
-      viewCert: 'عرض الشهادة',
+      subtitle: 'تقييمات مهنية معتمدة تثبت الكفاءة في حل المشكلات والخوارزميات وأطر العمل وإتقان اللغة.',
     },
     contact: {
-      label: 'اتصل بي',
-      title: 'تواصل معي',
-      subtitle: 'متاح للوظائف بدوام كامل، التدريب، المشاريع الحرة والتعاون.',
+      label: 'محطة الاتصال',
+      title: 'مركز السير الذاتية والتواصل',
+      subtitle: 'اختر النسخة المناسبة من سيرتي الذاتية وتواصل معي مباشرة لأي فرص عمل أو تعاون تقني.',
+      cvTitle: 'مستودع السير الذاتية',
+      cvSubtitle: 'نسخ مخصصة متاحة للتحميل الفوري باللغتين الإنجليزية والفرنسية.',
       emailLabel: 'البريد الإلكتروني',
-      phoneLabel: 'الهاتف',
-      githubLabel: 'GitHub',
-      linkedinLabel: 'LinkedIn',
-      cvTitle: 'تحميل سيرتي الذاتية',
-      cvSubtitle: 'اختر النسخة التي تناسب احتياجاتك.',
+      phoneLabel: 'الهاتف / واتساب',
     },
-    footer: 'صُنع بشغف من قِبَل بدر الدين السلاوي · 2026',
+    footer: 'معرض أعمال هندسي © 2026 بدر الدين السلاوي. مبني وفق معايير الويب الأصيلة الحديثة.',
   },
 };
 
-/* ── Project data ──────────────────────────────────────────── */
+/* ── 2. FEATURED PROJECTS REPOSITORY ────────────────────────── */
 const PROJECTS = [
   {
     name: 'MétéoRisk',
@@ -278,8 +293,8 @@ const PROJECTS = [
     icon: 'fa-solid fa-cloud-bolt',
     year: '2026',
     desc: {
-      en: 'Weather Risk ETL Pipeline & Analytics Dashboard — real-time ingestion, transformation, and visualization of weather hazard data.',
-      fr: 'Pipeline ETL de risques météo & tableau de bord analytique — ingestion, transformation et visualisation de données de risques météorologiques en temps réel.',
+      en: 'Weather Risk ETL Pipeline & Analytics Dashboard — real-time ingestion, transformation, and interactive visualization of weather hazard data.',
+      fr: 'Pipeline ETL de risques météo & tableau de bord analytique — ingestion, transformation et visualisation interactive des données météorologiques.',
       ar: 'خط أنابيب ETL لمخاطر الطقس ولوحة تحكم تحليلية — استيعاب وتحويل وتصور بيانات مخاطر الطقس في الوقت الفعلي.',
     },
     tech: ['Python', 'Pandas', 'SQLAlchemy', 'PostgreSQL', 'Apache Airflow', 'Docker', 'Streamlit', 'Plotly'],
@@ -291,9 +306,9 @@ const PROJECTS = [
     icon: 'fa-solid fa-motorcycle',
     year: '2026',
     desc: {
-      en: 'End-to-End Food Delivery Time Prediction System using gradient boosting and hyperparameter optimization, served via FastAPI.',
-      fr: 'Système de prédiction du temps de livraison alimentaire de bout en bout utilisant le gradient boosting et l\'optimisation des hyperparamètres.',
-      ar: 'نظام تنبؤ شامل بوقت توصيل الطعام باستخدام gradient boosting وتحسين المعاملات الفائقة، يُقدَّم عبر FastAPI.',
+      en: 'End-to-End Food Delivery Time Prediction System using gradient boosting, feature engineering, and hyperparameter optimization served via FastAPI.',
+      fr: 'Système prédictif de temps de livraison alimentaire de bout en bout avec gradient boosting, feature engineering et API haute performance FastAPI.',
+      ar: 'نظام تنبؤ شامل بوقت توصيل الطعام باستخدام gradient boosting وهندسة الخصائص، يُقدَّم عبر واجهة برمجة تطبيقات FastAPI سريعة.',
     },
     tech: ['Python', 'Scikit-learn', 'HistGradientBoosting', 'FastAPI', 'Streamlit', 'Docker', 'Joblib'],
   },
@@ -304,9 +319,9 @@ const PROJECTS = [
     icon: 'fa-solid fa-heart-pulse',
     year: '2026',
     desc: {
-      en: 'Clinical Profiling & Diabetes Risk Classification using K-Means clustering, imbalanced learning, MLflow tracking, and Airflow pipelines.',
-      fr: 'Profilage clinique et classification du risque de diabète via clustering K-Means, apprentissage déséquilibré, suivi MLflow et pipelines Airflow.',
-      ar: 'التصنيف السريري ومخاطر السكري باستخدام K-Means وتتبع MLflow وخطوط أنابيب Airflow.',
+      en: 'Clinical Profiling & Diabetes Risk Classification using K-Means clustering, imbalanced learning strategies, MLflow experiment tracking, and Airflow orchestration.',
+      fr: 'Profilage clinique et classification du risque de diabète via clustering K-Means, gestion de classes déséquilibrées, tracking MLflow et pipelines Airflow.',
+      ar: 'التصنيف السريري ومخاطر السكري باستخدام K-Means واستراتيجيات معالجة البيانات غير المتوازنة وتتبع تجارب MLflow وجدولة Airflow.',
     },
     tech: ['Python', 'Scikit-learn', 'K-Means', 'MLflow', 'Airflow', 'FastAPI', 'Streamlit', 'Docker'],
   },
@@ -317,11 +332,11 @@ const PROJECTS = [
     icon: 'fa-solid fa-gears',
     year: '2026',
     desc: {
-      en: 'Automated Project & Skills Evaluation Platform built with Laravel Octane, Nuxt.js, Go microservices, deployed on AWS.',
-      fr: 'Plateforme automatisée d\'évaluation de projets et compétences avec Laravel Octane, Nuxt.js, microservices Go, déployée sur AWS.',
-      ar: 'منصة تقييم تلقائية للمشاريع والمهارات مبنية بـ Laravel Octane و Nuxt.js وخدمات Go المصغرة على AWS.',
+      en: 'Automated Project & Skills Evaluation Platform built with Laravel Octane, Nuxt.js, Go microservices, and deployed across scalable AWS infrastructure.',
+      fr: 'Plateforme automatisée d\'évaluation de projets et compétences avec Laravel Octane, Nuxt.js et microservices Go, déployée sur infrastructure cloud AWS.',
+      ar: 'منصة تقييم تلقائية للمشاريع والمهارات مبنية بـ Laravel Octane و Nuxt.js وخدمات Go المصغرة على بنية تحتية سحابية في AWS.',
     },
-    tech: ['Laravel Octane', 'Nuxt.js', 'Go', 'PostgreSQL', 'Redis', 'Docker', 'AWS', 'JavaScript'],
+    tech: ['Laravel Octane', 'Nuxt.js', 'GoLang', 'PostgreSQL', 'Redis', 'Docker', 'AWS'],
   },
   {
     name: 'Mavel',
@@ -330,11 +345,11 @@ const PROJECTS = [
     icon: 'fa-solid fa-code',
     year: '2025',
     desc: {
-      en: 'Custom PHP MVC Framework built from scratch with its own ORM, routing engine, middleware pipeline, and CLI tooling.',
-      fr: 'Framework PHP MVC personnalisé construit de zéro avec son propre ORM, moteur de routage, pipeline de middleware et outils CLI.',
-      ar: 'إطار عمل PHP MVC مخصص مبني من الصفر مع ORM خاص ومحرك توجيه ومسار middleware وأدوات CLI.',
+      en: 'Custom PHP MVC Framework built from scratch with an active-record ORM, flexible routing engine, middleware pipeline, and dedicated CLI tool.',
+      fr: 'Framework PHP MVC personnalisé développé de zéro avec ORM active-record, moteur de routage flexible, pipeline de middleware et outil CLI dédié.',
+      ar: 'إطار عمل PHP MVC مخصص مبني من الصفر مع ORM خاص ومحرك توجيه مرن ومسار middleware وأداة سطر أوامر CLI خاصة.',
     },
-    tech: ['PHP', 'MVC Architecture', 'ORM', 'Routing', 'Middleware', 'CLI'],
+    tech: ['PHP', 'MVC Architecture', 'Custom ORM', 'Routing Engine', 'CLI Tooling', 'OOP'],
   },
   {
     name: 'FireCamp',
@@ -343,24 +358,25 @@ const PROJECTS = [
     icon: 'fa-solid fa-fire',
     year: '2023–2024',
     desc: {
-      en: 'Real-Time Social Networking Platform (MERN Stack) with posts, real-time chat, JWT auth, Redux state management, and WebSockets.',
-      fr: 'Plateforme de réseau social en temps réel (MERN Stack) avec publications, chat en direct, auth JWT, Redux et WebSockets.',
-      ar: 'منصة شبكة اجتماعية في الوقت الفعلي (MERN) مع المنشورات والدردشة الحية وتوثيق JWT وإدارة حالة Redux وWebSockets.',
+      en: 'Real-Time Social Networking Platform (MERN Stack) with instant posts, real-time WebSockets chat, JWT authentication, and Redux state management.',
+      fr: 'Plateforme de réseau social en temps réel (MERN Stack) avec publications directes, chat WebSockets, authentification JWT et gestion d\'état Redux.',
+      ar: 'منصة شبكة اجتماعية في الوقت الفعلي (MERN) مع المنشورات الفورية والدردشة المباشرة عبر WebSockets وتوثيق JWT وإدارة الحالة بواسطة Redux.',
     },
     tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'JWT', 'Redux', 'WebSockets', 'Firebase'],
   },
 ];
 
-/* ── State ──────────────────────────────────────────────── */
+/* ── 3. STATE CONTROLLER ────────────────────────────────────── */
 let currentLang = 'en';
 let currentFilter = 'all';
+let currentSearchTerm = '';
 
-/* ── DOM helpers ──────────────────────────────────────────── */
-const $ = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+/* DOM Helper Selectors */
+const $ = (selector, context = document) => context.querySelector(selector);
+const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
 
-/* ── Apply language ───────────────────────────────────────── */
-function applyLang(lang) {
+/* ── 4. MULTILANGUAGE SWITCHER ──────────────────────────────── */
+function applyLanguage(lang) {
   const t = TRANSLATIONS[lang];
   if (!t) return;
   currentLang = lang;
@@ -369,169 +385,443 @@ function applyLang(lang) {
   document.documentElement.dir = t.dir;
   document.body.dir = t.dir;
 
-  // highlight active lang button
+  // Active language buttons state
   $$('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 
-  /* ── Navbar ── */
+  // Dynamic text substitution
   $$('[data-t]').forEach(el => {
     const key = el.dataset.t;
     const parts = key.split('.');
-    let val = t;
-    for (const p of parts) val = val?.[p];
-    if (val !== undefined) el.textContent = val;
+    let value = t;
+    for (const p of parts) value = value?.[p];
+    if (value !== undefined) el.textContent = value;
   });
 
-  /* ── Projects (re-render with current filter) ── */
-  renderProjects(currentFilter);
+  // Re-render project cards in current language
+  renderProjects();
 
-  /* ── Filter buttons ── */
-  $$('.filter-btn').forEach(btn => {
-    const fKey = btn.dataset.filter;
-    if (fKey === 'all') btn.textContent = t.projects.all;
-    else if (fKey === 'ai') btn.textContent = t.projects.ai;
-    else if (fKey === 'fullstack') btn.textContent = t.projects.fullstack;
-  });
+  // Update project tab text
+  const allTab = $('.project-tab-btn[data-filter="all"]');
+  const aiTab = $('.project-tab-btn[data-filter="ai"]');
+  const fsTab = $('.project-tab-btn[data-filter="fullstack"]');
+  if (allTab) allTab.textContent = t.projects.all;
+  if (aiTab) aiTab.textContent = t.projects.ai;
+  if (fsTab) fsTab.textContent = t.projects.fullstack;
 }
 
-/* ── Render projects ──────────────────────────────────────── */
-function renderProjects(filter = 'all') {
-  currentFilter = filter;
-  const t = TRANSLATIONS[currentLang];
+/* ── 5. PROJECTS RENDERING & FILTERING ──────────────────────── */
+function renderProjects() {
   const container = $('#projects-grid');
   if (!container) return;
 
-  const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.type === filter);
+  const t = TRANSLATIONS[currentLang];
 
-  container.innerHTML = filtered.map(p => {
-    const badgeClass = p.type === 'ai' ? 'badge-ai' : p.type === 'fullstack' ? 'badge-fullstack' : 'badge-personal';
-    const badgeLabel = p.type === 'ai' ? t.projects.ai : 'Full-Stack';
-    const desc = p.desc[currentLang] || p.desc.en;
-    const techPills = p.tech.map(tech => `<span class="tech-pill">${tech}</span>`).join('');
+  // Filter by category
+  let list = currentFilter === 'all' ? PROJECTS : PROJECTS.filter(p => p.type === currentFilter);
+
+  // Filter by search keyword
+  if (currentSearchTerm.trim() !== '') {
+    const q = currentSearchTerm.toLowerCase();
+    list = list.filter(p => {
+      const matchName = p.name.toLowerCase().includes(q);
+      const matchTech = p.tech.some(t => t.toLowerCase().includes(q));
+      const desc = (p.desc[currentLang] || p.desc.en).toLowerCase();
+      return matchName || matchTech || desc.includes(q);
+    });
+  }
+
+  if (list.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; padding: 3rem; text-align: center; background: var(--bg-glass-card); border: 1px dashed var(--border-cyan); border-radius: var(--radius-lg); font-family: var(--font-mono); color: var(--text-muted);">
+        <i class="fa-solid fa-code-compare" style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 0.8rem; display: block;"></i>
+        <div>NO MATCHING SYSTEMS FOUND FOR QUERY: "${currentSearchTerm}"</div>
+        <div style="font-size: 0.78rem; margin-top: 0.5rem; color: var(--accent-emerald);">Try searching for Python, Docker, Laravel, React or clear the filter.</div>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = list.map(project => {
+    const badgeClass = project.type === 'ai' ? 'badge-ai' : 'badge-fullstack';
+    const badgeLabel = project.type === 'ai' ? (t.projects.ai || 'AI & ML') : 'Full-Stack';
+    const descText = project.desc[currentLang] || project.desc.en;
+    const techPills = project.tech.map(tech => `<span class="project-tech-pill">${tech}</span>`).join('');
+
     return `
-      <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="project-card reveal-up">
+      <div class="project-card project-${project.type} reveal-up visible">
         <div class="project-card-header">
-          <div class="project-icon-wrap"><i class="${p.icon}"></i></div>
-          <span class="project-type-badge ${badgeClass}">${badgeLabel}</span>
+          <div class="project-icon-box">
+            <i class="${project.icon}"></i>
+          </div>
+          <span class="project-badge-pill ${badgeClass}">${badgeLabel}</span>
         </div>
-        <div class="project-name">${p.name}</div>
-        <p class="project-desc">${desc}</p>
-        <div class="project-tech">${techPills}</div>
-        <div class="project-footer">
-          <span class="project-link"><i class="fab fa-github"></i> ${t.projects.viewOnGithub} <i class="fa-solid fa-arrow-right"></i></span>
-          <span class="project-year">${p.year}</span>
+        <h3 class="project-name">
+          <span>${project.name}</span>
+          <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);font-weight:400;">${project.year}</span>
+        </h3>
+        <p class="project-desc">${descText}</p>
+        <div class="project-tech-tags">${techPills}</div>
+        <div class="project-card-footer">
+          <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="project-repo-link">
+            <i class="fa-brands fa-github"></i>
+            <span>${t.projects.viewRepo || 'Source Code'}</span>
+            <i class="fa-solid fa-arrow-right" style="font-size:0.75rem;"></i>
+          </a>
+          <span class="project-year"><i class="fa-solid fa-check" style="color:var(--accent-emerald);"></i> Verified</span>
         </div>
-      </a>
+      </div>
     `;
   }).join('');
-
-  // trigger reveal for newly injected cards
-  requestAnimationFrame(() => {
-    $$('#projects-grid .reveal-up').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), i * 80);
-    });
-  });
-
-  // update filter button active state
-  $$('.filter-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.filter === filter);
-  });
 }
 
-/* ── Navbar scroll ────────────────────────────────────────── */
-function initNavbar() {
-  const navbar = $('#navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-    updateActiveNavLink();
-    // scroll-to-top
-    $('#scroll-top').classList.toggle('visible', window.scrollY > 400);
-  }, { passive: true });
-}
+/* ── 6. SKILLS MATRIX LIVE SEARCH ───────────────────────────── */
+function initSkillsFilter() {
+  const input = $('#skills-filter-input');
+  if (!input) return;
 
-/* ── Active nav link on scroll ─────────────────────────────── */
-function updateActiveNavLink() {
-  const sections = $$('section[id]');
-  const scrollY = window.scrollY + 80;
-  let currentId = '';
-  sections.forEach(sec => {
-    if (sec.offsetTop <= scrollY) currentId = sec.id;
-  });
-  $$('.nav-link').forEach(link => {
-    link.classList.toggle('active', link.dataset.section === currentId);
-  });
-}
+  input.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    const chips = $$('.skill-chip');
 
-/* ── Smooth scroll ────────────────────────────────────────── */
-function scrollToSection(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-  // close mobile menu
-  $('#mobile-menu').classList.remove('open');
-  $('#hamburger').classList.remove('open');
-}
-
-/* ── Hamburger ────────────────────────────────────────────── */
-function initHamburger() {
-  const hamburger = $('#hamburger');
-  const menu = $('#mobile-menu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    menu.classList.toggle('open');
-  });
-}
-
-/* ── CV Dropdown ──────────────────────────────────────────── */
-function initCVDropdown() {
-  const trigger = $('#cv-trigger');
-  const menu = $('#cv-menu');
-  if (!trigger || !menu) return;
-
-  trigger.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menu.classList.toggle('open');
-  });
-  document.addEventListener('click', () => menu.classList.remove('open'));
-}
-
-/* ── Intersection Observer (reveal) ──────────────────────── */
-function initReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    chips.forEach(chip => {
+      const text = chip.textContent.toLowerCase();
+      if (query === '') {
+        chip.classList.remove('highlighted');
+        chip.style.opacity = '1';
+      } else if (text.includes(query)) {
+        chip.classList.add('highlighted');
+        chip.style.opacity = '1';
+      } else {
+        chip.classList.remove('highlighted');
+        chip.style.opacity = '0.35';
       }
     });
-  }, { threshold: 0.12 });
+  });
+}
 
-  $$('.reveal-up').forEach(el => observer.observe(el));
+/* ── 7. TYPEWRITER SUBTITLE ENGINE ──────────────────────────── */
+function initTypewriter() {
+  const el = $('#role-typewriter');
+  if (!el) return;
 
-  // Also observe lang bars — trigger as soon as about section appears
-  const triggerLangBars = () => $$('.lang-bar-fill').forEach(bar => bar.classList.add('animated'));
-  const langObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        triggerLangBars();
-        langObserver.disconnect();
+  const phrases = [
+    'Full-Stack Developer & AI/ML Engineer',
+    'Architecting Scalable Laravel & React Web Systems',
+    'Training Predictive Machine Learning Models',
+    'Building End-to-End MLOps & Airflow Pipelines',
+    'DevOps, Linux Server Administration & Docker',
+  ];
+
+  let phraseIdx = 0;
+  let charIdx = phrases[0].length;
+  let isDeleting = false;
+  let waitTicks = 0;
+
+  function tick() {
+    const currentPhrase = phrases[phraseIdx];
+
+    if (!isDeleting) {
+      el.textContent = currentPhrase.substring(0, charIdx);
+      if (charIdx < currentPhrase.length) {
+        charIdx++;
+        setTimeout(tick, 45);
+      } else {
+        // Pause at end of phrase
+        isDeleting = true;
+        setTimeout(tick, 2200);
       }
-    });
-  }, { threshold: 0.1 });
-  const langSection = $('#about');
-  if (langSection) {
-    // If already in view on load (e.g. page refresh mid-scroll), trigger immediately
-    const rect = langSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      triggerLangBars();
     } else {
-      langObserver.observe(langSection);
+      el.textContent = currentPhrase.substring(0, charIdx);
+      if (charIdx > 0) {
+        charIdx--;
+        setTimeout(tick, 25);
+      } else {
+        isDeleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        setTimeout(tick, 300);
+      }
     }
+  }
+
+  // Start rotation after initial display
+  setTimeout(tick, 2500);
+}
+
+/* ── 8. INTERACTIVE LINUX TERMINAL SANDBOX ──────────────────── */
+function initTerminal() {
+  const terminalContainer = $('#interactive-terminal');
+  const output = $('#terminal-output-container');
+  const input = $('#terminal-cli-input');
+  if (!output || !input) return;
+
+  const COMMANDS = {
+    help: () => `
+      <div class="terminal-cyan">Available System Commands:</div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:4px;margin-top:4px;">
+        <span class="terminal-emerald">about</span><span>View biography & engineering summary</span>
+        <span class="terminal-emerald">skills</span><span>List core technical proficiencies</span>
+        <span class="terminal-emerald">projects</span><span>Explore key highlighted projects</span>
+        <span class="terminal-emerald">cv</span><span>Get CV download links & info</span>
+        <span class="terminal-emerald">contact</span><span>Display communication channels</span>
+        <span class="terminal-emerald">neofetch</span><span>Display host workstation telemetry</span>
+        <span class="terminal-emerald">sudo hire</span><span>Unlock recruitment handshake protocol</span>
+        <span class="terminal-emerald">clear</span><span>Flush terminal buffer</span>
+      </div>
+    `,
+    about: () => `
+      <div class="terminal-cyan">[IDENTITY]: Badr Eddine Slaoui</div>
+      <div>Full-Stack Web Developer & AI/ML Engineer based in Safi, Morocco.</div>
+      <div>Bridging Laravel, React, Vue, Go microservices with Python, Scikit-learn, and MLOps.</div>
+    `,
+    skills: () => `
+      <div class="terminal-cyan">[CORE STACK]:</div>
+      <div>- Web & Services: PHP (Laravel, Octane), React, Vue 3, Nuxt 4, Node.js, GoLang</div>
+      <div>- AI & ML: Python, Scikit-learn, XGBoost, Pandas, FastAPI, MLflow, Airflow</div>
+      <div>- Infrastructure: Docker, AWS (EC2/RDS), Redis, PostgreSQL, Linux, Git CI/CD</div>
+    `,
+    projects: () => `
+      <div class="terminal-cyan">[FEATURED REPOSITORIES]:</div>
+      <div>1. <span class="terminal-emerald">MétéoRisk</span>: Weather Risk ETL Pipeline (Airflow, Postgres, Docker)</div>
+      <div>2. <span class="terminal-emerald">DeliveryETA</span>: Food Delivery Time Prediction (FastAPI, Scikit-learn)</div>
+      <div>3. <span class="terminal-emerald">GlucoProfile</span>: Diabetes Risk Classification & MLflow</div>
+      <div>4. <span class="terminal-emerald">Rewire</span>: Skills Evaluation Platform (Laravel Octane, Nuxt, Go)</div>
+      <div>5. <span class="terminal-emerald">Mavel</span>: Custom PHP MVC Framework & ORM</div>
+    `,
+    cv: () => `
+      <div class="terminal-cyan">[CV REPOSITORY]:</div>
+      <div>- Full-Stack CV (EN): PDFs/CV FullStack English.pdf</div>
+      <div>- Full-Stack CV (FR): PDFs/CV FullStack French.pdf</div>
+      <div>- AI / ML CV (EN): PDFs/CV AI English.pdf</div>
+      <div>- AI / ML CV (FR): PDFs/CV AI French.pdf</div>
+      <div style="color:var(--accent-emerald);margin-top:4px;">Direct download cards available in the CV Hub section below!</div>
+    `,
+    contact: () => `
+      <div class="terminal-cyan">[COMMUNICATION ENDPOINTS]:</div>
+      <div>- Email: <span class="terminal-emerald">slaoui.badr.eddine.sdv@gmail.com</span></div>
+      <div>- Phone: <span class="terminal-emerald">(+212) 680-981007</span></div>
+      <div>- GitHub: <a href="https://github.com/Badr-Eddine-Slaoui" target="_blank" style="color:var(--accent-cyan);">github.com/Badr-Eddine-Slaoui</a></div>
+      <div>- LinkedIn: <a href="https://linkedin.com/in/badr-eddine-slaoui" target="_blank" style="color:var(--accent-cyan);">linkedin.com/in/badr-eddine-slaoui</a></div>
+    `,
+    neofetch: () => `
+      <div style="font-family:monospace;white-space:pre;color:var(--accent-cyan);line-height:1.2;font-size:0.75rem;">
+  ___           _          <span style="color:#f8fafc;">badr@morocco-sys</span>
+ / _ \\ ___  ___| |__       ----------------
+| (_) / _ \\/ __| '_ \\      <span style="color:var(--accent-emerald);">OS:</span> Linux 6.8.0-arch-amd64
+ \\___/\\___/\\___|_.__/      <span style="color:var(--accent-emerald);">Host:</span> Safi, Morocco [UTC+1]
+                           <span style="color:var(--accent-emerald);">Uptime:</span> 2+ Years in Production
+                           <span style="color:var(--accent-emerald);">Shell:</span> bash 5.2.26
+                           <span style="color:var(--accent-emerald);">Stack:</span> Full-Stack / AI / DevOps
+                           <span style="color:var(--accent-emerald);">Terminal:</span> AGY-CyberTerm v2.4
+      </div>
+    `,
+    'sudo hire': () => {
+      setTimeout(() => {
+        const contactSec = $('#contact');
+        if (contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
+      }, 700);
+      return `<div style="color:var(--accent-emerald);font-weight:bold;">[SUCCESS]: Handshake accepted. Redirecting to direct communications terminal...</div>`;
+    },
+    clear: () => {
+      output.innerHTML = '';
+      return '';
+    },
+  };
+
+  function executeCommand(rawCmd) {
+    const cmd = rawCmd.trim().toLowerCase();
+    if (!cmd) return;
+
+    if (cmd === 'clear') {
+      COMMANDS.clear();
+      return;
+    }
+
+    // Append user input line
+    const userLine = document.createElement('div');
+    userLine.className = 'terminal-line';
+    userLine.innerHTML = `<span class="terminal-prompt">badr@sys:~$</span> <span>${rawCmd}</span>`;
+    output.appendChild(userLine);
+
+    // Resolve output
+    let resultHtml = '';
+    if (COMMANDS[cmd]) {
+      resultHtml = COMMANDS[cmd]();
+    } else {
+      resultHtml = `<div style="color:#ef4444;">Command not found: "${cmd}". Type <span class="terminal-cyan">'help'</span> for available commands.</div>`;
+    }
+
+    if (resultHtml) {
+      const respBox = document.createElement('div');
+      respBox.className = 'terminal-output';
+      respBox.innerHTML = resultHtml;
+      output.appendChild(respBox);
+    }
+
+    output.scrollTop = output.scrollHeight;
+  }
+
+  // Handle enter key in input
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const val = input.value;
+      input.value = '';
+      executeCommand(val);
+    }
+  });
+
+  // Handle chip clicks
+  $$('.terminal-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const cmd = chip.dataset.cmd;
+      executeCommand(cmd);
+      input.focus();
+    });
+  });
+
+  // Focus terminal button in navbar
+  const toggleBtn = $('#terminal-focus-btn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      terminalContainer.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => input.focus(), 500);
+    });
   }
 }
 
-/* ── Re-observe after DOM updates ─────────────────────────── */
-function reObserveReveal() {
+/* ── 9. TOAST NOTIFICATIONS & CLIPBOARD ─────────────────────── */
+function showToast(message) {
+  const toast = $('#toast');
+  const toastText = $('#toast-text');
+  if (!toast) return;
+
+  toastText.textContent = message;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2800);
+}
+
+function initClipboard() {
+  const emailBox = $('#copy-email-box');
+  if (emailBox) {
+    emailBox.addEventListener('click', () => {
+      navigator.clipboard.writeText('slaoui.badr.eddine.sdv@gmail.com').then(() => {
+        showToast('Email address copied to clipboard!');
+      }).catch(() => {
+        showToast('slaoui.badr.eddine.sdv@gmail.com');
+      });
+    });
+  }
+
+  const phoneBox = $('#copy-phone-box');
+  if (phoneBox) {
+    phoneBox.addEventListener('click', () => {
+      navigator.clipboard.writeText('+212680981007').then(() => {
+        showToast('Phone number copied to clipboard!');
+      }).catch(() => {
+        showToast('+212 680-981007');
+      });
+    });
+  }
+}
+
+/* ── 10. QUICK CONTACT MESSAGE DISPATCH ─────────────────────── */
+function initContactForm() {
+  const form = $('#quick-contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = $('#sender-name').value;
+    const email = $('#sender-email').value;
+    const message = $('#sender-message').value;
+
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`);
+
+    showToast('Dispatching message client...');
+    window.location.href = `mailto:slaoui.badr.eddine.sdv@gmail.com?subject=${subject}&body=${body}`;
+
+    form.reset();
+  });
+}
+
+/* ── 11. NAVBAR SCROLL SPY & CONTROLS ───────────────────────── */
+function initNavigation() {
+  const navbar = $('#navbar');
+  const scrollTopBtn = $('#scroll-top');
+  const hamburger = $('#hamburger');
+  const mobileDrawer = $('#mobile-drawer');
+
+  // Window scroll handler
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    navbar.classList.toggle('scrolled', scrollY > 30);
+    scrollTopBtn.classList.toggle('visible', scrollY > 400);
+
+    // Active Section Scroll Spy
+    const sections = $$('section[id]');
+    let activeId = 'hero';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 140;
+      if (scrollY >= top) activeId = sec.id;
+    });
+
+    $$('.nav-link').forEach(link => {
+      link.classList.toggle('active', link.dataset.section === activeId);
+    });
+    $$('.mobile-link').forEach(link => {
+      link.classList.toggle('active', link.dataset.section === activeId);
+    });
+  }, { passive: true });
+
+  // Scroll to Top
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Mobile Drawer Toggle
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileDrawer.classList.toggle('open');
+  });
+
+  // Smooth Scroll Link Binding
+  const handleScrollClick = (sectionId) => {
+    const target = document.getElementById(sectionId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+    hamburger.classList.remove('open');
+    mobileDrawer.classList.remove('open');
+  };
+
+  $$('.nav-link[data-section]').forEach(link => {
+    link.addEventListener('click', () => handleScrollClick(link.dataset.section));
+  });
+
+  $$('.mobile-link[data-section]').forEach(link => {
+    link.addEventListener('click', () => handleScrollClick(link.dataset.section));
+  });
+
+  // Hero CTAs
+  const ctaProjects = $('#cta-projects');
+  if (ctaProjects) ctaProjects.addEventListener('click', () => handleScrollClick('projects'));
+
+  const ctaCV = $('#cta-cv-hub');
+  if (ctaCV) ctaCV.addEventListener('click', () => handleScrollClick('contact'));
+
+  const ctaContact = $('#cta-contact');
+  if (ctaContact) ctaContact.addEventListener('click', () => handleScrollClick('contact'));
+
+  const navCV = $('#nav-cv-btn');
+  if (navCV) navCV.addEventListener('click', () => handleScrollClick('contact'));
+}
+
+/* ── 12. INTERSECTION OBSERVER REVEAL ───────────────────────── */
+function initIntersectionAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -540,55 +830,57 @@ function reObserveReveal() {
       }
     });
   }, { threshold: 0.1 });
-  $$('.reveal-up:not(.visible)').forEach(el => observer.observe(el));
+
+  $$('.reveal-up').forEach(el => observer.observe(el));
+
+  // Language Meter Fill Observer
+  const meterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        $$('.lang-meter-fill').forEach(fill => fill.classList.add('animated'));
+        meterObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const aboutSection = $('#about');
+  if (aboutSection) meterObserver.observe(aboutSection);
 }
 
-/* ── Scroll to top ────────────────────────────────────────── */
-function initScrollTop() {
-  $('#scroll-top').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-/* ── Init ─────────────────────────────────────────────────── */
+/* ── 13. DOM INITIALIZATION ─────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  // Language buttons
+  // Language button clicks
   $$('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
   });
 
-  // Nav links (desktop)
-  $$('.nav-link[data-section]').forEach(link => {
-    link.addEventListener('click', () => scrollToSection(link.dataset.section));
+  // Project Category Tab Buttons
+  $$('.project-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      $$('.project-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      renderProjects();
+    });
   });
 
-  // Nav links (mobile)
-  $$('.mobile-nav-link[data-section]').forEach(link => {
-    link.addEventListener('click', () => scrollToSection(link.dataset.section));
-  });
+  // Project Live Search Input
+  const projSearchInput = $('#project-search-input');
+  if (projSearchInput) {
+    projSearchInput.addEventListener('input', (e) => {
+      currentSearchTerm = e.target.value;
+      renderProjects();
+    });
+  }
 
-  // Project filter buttons
-  $$('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => renderProjects(btn.dataset.filter));
-  });
-
-  // Hero CTA
-  const ctaProjects = $('#cta-projects');
-  if (ctaProjects) ctaProjects.addEventListener('click', () => scrollToSection('projects'));
-  const ctaContact = $('#cta-contact');
-  if (ctaContact) ctaContact.addEventListener('click', () => scrollToSection('contact'));
-
-  initNavbar();
-  initHamburger();
-  initCVDropdown();
-  initScrollTop();
-
-  // Initial render
-  renderProjects('all');
-  applyLang('en');
-
-  // Reveal after render
-  setTimeout(() => {
-    initReveal();
-  }, 100);
+  // Initialize all subsystems
+  initNavigation();
+  initSkillsFilter();
+  initTypewriter();
+  initTerminal();
+  initClipboard();
+  initContactForm();
+  renderProjects();
+  initIntersectionAnimations();
+  applyLanguage('en');
 });
