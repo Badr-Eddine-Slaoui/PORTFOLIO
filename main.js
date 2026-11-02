@@ -54,7 +54,7 @@ const TRANSLATIONS = {
       label: 'System Specifications',
       title: 'Who I Am',
       subtitle: 'A passionate developer bridging the worlds of Full-Stack Web Engineering and Artificial Intelligence.',
-      para1: 'I\'m Badr Eddine Slaoui, a Full-Stack Web Developer and AI/ML Engineer based in Safi, Morocco. I specialize in building production-ready web applications with Laravel, React, Vue, and Node.js — while also developing end-to-end machine learning systems with Python, Scikit-learn, FastAPI, and MLOps tools.',
+      para1: 'I\'m Badr Eddine Slaoui, a Full-Stack Web Developer and AI/ML Engineer based in Safi, Morocco. I specialize in building scalable web platforms with Laravel, React, Vue, and Node.js — while engineering deep learning, computer vision, and medical AI systems using TensorFlow, PyTorch, YOLOv8, FastAPI, and automated MLOps pipelines.',
       para2: 'I thrive at the intersection of clean architecture and intelligent automation, turning complex operational requirements into scalable, secure, and maintainable digital products.',
       langTitle: 'Languages Proficiency',
     },
@@ -74,7 +74,7 @@ const TRANSLATIONS = {
     projects: {
       label: 'Projects Matrix',
       title: 'Featured Engineering Work',
-      subtitle: 'A curated collection of full-stack platforms, Machine Learning pipelines, and custom frameworks.',
+      subtitle: 'A curated collection of deep learning platforms, full-stack architectures, and automated MLOps pipelines.',
       all: 'All Systems',
       ai: 'AI & ML',
       fullstack: 'Full-Stack',
@@ -144,7 +144,7 @@ const TRANSLATIONS = {
       label: 'Spécifications Système',
       title: 'Qui suis-je',
       subtitle: 'Un ingénieur passionné à la croisée du développement Full-Stack et de l\'Intelligence Artificielle.',
-      para1: 'Je suis Badr Eddine Slaoui, développeur web Full-Stack et ingénieur IA/ML basé à Safi, Maroc. Je conçois des applications web prêtes pour la production avec Laravel, React, Vue et Node.js, tout en développant des systèmes de Machine Learning de bout en bout avec Python, Scikit-learn, FastAPI et MLOps.',
+      para1: 'Je suis Badr Eddine Slaoui, développeur web Full-Stack et ingénieur IA/ML basé à Safi, Maroc. Je conçois des applications web performantes avec Laravel, React, Vue et Node.js, tout en développant des systèmes de Deep Learning, de vision par ordinateur et d\'IA médicale avec TensorFlow, PyTorch, YOLOv8, FastAPI et des pipelines MLOps automatisés.',
       para2: 'Je m\'épanouis à l\'intersection de l\'architecture logicielle propre et de l\'automatisation intelligente, transformant des exigences complexes en produits numériques performants et sécurisés.',
       langTitle: 'Maîtrise des Langues',
     },
@@ -164,7 +164,7 @@ const TRANSLATIONS = {
     projects: {
       label: 'Matrice de Projets',
       title: 'Travaux d\'Ingénierie',
-      subtitle: 'Sélection de plateformes complètes, pipelines de Machine Learning et frameworks sur-mesure.',
+      subtitle: 'Sélection de plateformes de Deep Learning, architectures Full-Stack complètes et pipelines MLOps automatisés.',
       all: 'Tous les Systèmes',
       ai: 'IA & ML',
       fullstack: 'Full-Stack',
@@ -234,7 +234,7 @@ const TRANSLATIONS = {
       label: 'مواصفات النظام',
       title: 'من أنا',
       subtitle: 'مهندس برمجيات شغوف يجمع بين عالم التطوير الشامل Full-Stack وأنظمة الذكاء الاصطناعي الحديثة.',
-      para1: 'أنا بدر الدين السلاوي، مطوّر ويب Full-Stack ومهندس ذكاء اصطناعي من آسفي، المغرب. أتخصص في بناء تطبيقات ويب متطورة وقوية باستخدام Laravel و React و Vue و Node.js، إلى جانب تطوير أنظمة التعلم الآلي الشاملة باستخدام Python و Scikit-learn و FastAPI وأدوات MLOps.',
+      para1: 'أنا بدر الدين السلاوي، مطوّر ويب Full-Stack ومهندس ذكاء اصطناعي من آسفي، المغرب. أتخصص في بناء تطبيقات ويب متطورة وقوية باستخدام Laravel و React و Vue و Node.js، إلى جانب هندسة أنظمة التعلم العميق ورؤية الحاسوب والذكاء الاصطناعي الطبي باستخدام TensorFlow و PyTorch و YOLOv8 و FastAPI وأنابيب MLOps المؤتمتة.',
       para2: 'أتميز في نقطة التقاطع بين الهندسة المعمارية النظيفة والأتمتة الذكية، محوّلاً المتطلبات التقنية المعقدة إلى منتجات رقمية قابلة للتوسع وآمنة وسهلة الصيانة.',
       langTitle: 'إتقان اللغات',
     },
@@ -254,7 +254,7 @@ const TRANSLATIONS = {
     projects: {
       label: 'مصفوفة المشاريع',
       title: 'أعمال هندسية مميزة',
-      subtitle: 'مجموعة مختارة من منصات الويب الكاملة وخطوط أنابيب التعلم الآلي وأطر العمل المخصصة.',
+      subtitle: 'مجموعة مختارة من منصات التعلم العميق وهندسة الويب المتكاملة وخطوط أنابيب MLOps المؤتمتة.',
       all: 'جميع الأنظمة',
       ai: 'ذكاء اصطناعي',
       fullstack: 'Full-Stack',
@@ -286,6 +286,32 @@ const TRANSLATIONS = {
 
 /* ── 2. FEATURED PROJECTS REPOSITORY ────────────────────────── */
 const PROJECTS = [
+  {
+    name: 'BrainScan V2',
+    type: 'ai',
+    url: 'https://github.com/Badr-Eddine-Slaoui/BrainScanV2',
+    icon: 'fa-solid fa-brain',
+    year: '2026',
+    desc: {
+      en: 'Clinical AI Intelligence Platform — Dual-Engine Deep Learning Suite pairing InceptionV3 transfer learning for multi-class tumour classification with Ultralytics YOLOv8n for lesion localization, automated weekly Airflow DAGs, and MLflow model registry.',
+      fr: 'Plateforme d\'intelligence clinique IA — Suite Deep Learning à double moteur associant InceptionV3 pour la classification multi-classes et Ultralytics YOLOv8n pour la localisation des lésions, orchestrée via Airflow et MLflow.',
+      ar: 'منصة ذكاء اصطناعي سريرية متقدمة — بنية تعلم عميق مزدوجة المحرك تجمع بين InceptionV3 لتصنيف أورام المخ و YOLOv8n لتطويق وتحديد مواقع الآفات بدقة، مؤتمتة عبر Airflow وسجل MLflow.',
+    },
+    tech: ['Python', 'TensorFlow', 'YOLOv8', 'PyTorch', 'InceptionV3', 'OpenCV', 'Apache Airflow', 'MLflow', 'FastAPI', 'Streamlit', 'Docker'],
+  },
+  {
+    name: 'BrainScan AI',
+    type: 'ai',
+    url: 'https://github.com/Badr-Eddine-Slaoui/BrainScan',
+    icon: 'fa-solid fa-head-side-virus',
+    year: '2026',
+    desc: {
+      en: 'AI-Assisted Brain Tumour MRI Classification System — custom 4-class CNN model for automated intracranial lesion pre-screening, integrated with FastAPI REST inference, Streamlit dashboard, and MLflow tracking.',
+      fr: 'Système d\'aide au diagnostic IRM par IA — Modèle CNN personnalisé à 4 classes pour le pré-dépistage des tumeurs cérébrales, avec API REST FastAPI, dashboard Streamlit et suivi d\'expériences MLflow.',
+      ar: 'نظام تشخيص مدعوم بالذكاء الاصطناعي لأورام الدماغ من صور الرنين المغناطيسي — شبكة عصبية تلافيفية (CNN) رباعية التصنيف لتحليل أورام المخ مع درجات ثقة احتمالية، وخادم FastAPI، ولوحة Streamlit.',
+    },
+    tech: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'FastAPI', 'Streamlit', 'MLflow', 'Docker Compose', 'PostgreSQL'],
+  },
   {
     name: 'MétéoRisk',
     type: 'ai',
@@ -508,8 +534,9 @@ function initTypewriter() {
 
   const phrases = [
     'Full-Stack Developer & AI/ML Engineer',
+    'Deep Learning, Computer Vision & Medical AI',
     'Architecting Scalable Laravel & React Web Systems',
-    'Training Predictive Machine Learning Models',
+    'Training Predictive ML & Dual-Engine Deep Learning Models',
     'Building End-to-End MLOps & Airflow Pipelines',
     'DevOps, Linux Server Administration & Docker',
   ];
@@ -573,21 +600,23 @@ function initTerminal() {
     about: () => `
       <div class="terminal-cyan">[IDENTITY]: Badr Eddine Slaoui</div>
       <div>Full-Stack Web Developer & AI/ML Engineer based in Safi, Morocco.</div>
-      <div>Bridging Laravel, React, Vue, Go microservices with Python, Scikit-learn, and MLOps.</div>
+      <div>Bridging Laravel, React, Vue, Go microservices with Python, TensorFlow, YOLOv8, Computer Vision, and MLOps.</div>
     `,
     skills: () => `
       <div class="terminal-cyan">[CORE STACK]:</div>
       <div>- Web & Services: PHP (Laravel, Octane), React, Vue 3, Nuxt 4, Node.js, GoLang</div>
-      <div>- AI & ML: Python, Scikit-learn, XGBoost, Pandas, FastAPI, MLflow, Airflow</div>
+      <div>- AI, DL & CV: Python, TensorFlow/Keras, PyTorch, YOLOv8, OpenCV, Scikit-learn, XGBoost, FastAPI, MLflow, Airflow</div>
       <div>- Infrastructure: Docker, AWS (EC2/RDS), Redis, PostgreSQL, Linux, Git CI/CD</div>
     `,
     projects: () => `
       <div class="terminal-cyan">[FEATURED REPOSITORIES]:</div>
-      <div>1. <span class="terminal-emerald">MétéoRisk</span>: Weather Risk ETL Pipeline (Airflow, Postgres, Docker)</div>
-      <div>2. <span class="terminal-emerald">DeliveryETA</span>: Food Delivery Time Prediction (FastAPI, Scikit-learn)</div>
-      <div>3. <span class="terminal-emerald">GlucoProfile</span>: Diabetes Risk Classification & MLflow</div>
-      <div>4. <span class="terminal-emerald">Rewire</span>: Skills Evaluation Platform (Laravel Octane, Nuxt, Go)</div>
-      <div>5. <span class="terminal-emerald">Mavel</span>: Custom PHP MVC Framework & ORM</div>
+      <div>1. <span class="terminal-emerald">BrainScan V2</span>: Dual-Engine Clinical AI Platform (InceptionV3 + YOLOv8, Airflow, MLflow, FastAPI)</div>
+      <div>2. <span class="terminal-emerald">BrainScan AI</span>: CNN Brain Tumour Classification from MRI (TensorFlow, OpenCV, MLflow, Streamlit)</div>
+      <div>3. <span class="terminal-emerald">MétéoRisk</span>: Weather Risk ETL Pipeline (Airflow, Postgres, Docker)</div>
+      <div>4. <span class="terminal-emerald">DeliveryETA</span>: Food Delivery Time Prediction (FastAPI, Scikit-learn)</div>
+      <div>5. <span class="terminal-emerald">GlucoProfile</span>: Diabetes Risk Classification & MLflow</div>
+      <div>6. <span class="terminal-emerald">Rewire</span>: Skills Evaluation Platform (Laravel Octane, Nuxt, Go)</div>
+      <div>7. <span class="terminal-emerald">Mavel</span>: Custom PHP MVC Framework & ORM</div>
     `,
     cv: () => `
       <div class="terminal-cyan">[CV REPOSITORY]:</div>
